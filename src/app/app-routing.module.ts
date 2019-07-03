@@ -15,6 +15,9 @@ import {SigninComponent} from './signin/signin.component';
 import {ProfileComponent} from './profile/profile.component';
 import {ArticleNewComponent} from './article-new/article-new.component';
 import {ArticlesMyComponent} from './articles-my/articles-my.component';
+import {MyMapComponent} from './my-map/my-map.component';
+import{MarkerdetailComponent} from './markerdetail/markerdetail.component';
+import { from } from 'rxjs';
  export const routes: Routes = [
 
   // { path: '', component: ArifMainComponent },
@@ -24,7 +27,11 @@ import {ArticlesMyComponent} from './articles-my/articles-my.component';
   {path:'signin',component:SigninComponent },
   {path:'articleNew',component:ArticleNewComponent},
   {path:'profile',component:ProfileComponent},
-  {path:'myarticles', component:ArticlesMyComponent}
+  {path:'myarticles', component:ArticlesMyComponent},
+  {path:'mymap' , component:MyMapComponent},
+  {path:'markerdetail' , component:MarkerdetailComponent},
+  {path:'markerdetail/:id' , component:MarkerdetailComponent}
+
 ];
 
 @NgModule({

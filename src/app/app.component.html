@@ -17,6 +17,7 @@
     
     <a   *ngIf="loggedIn&&!isMobile"   routerLink="/myarticles">My Publications</a>
     <a     routerLink="/about"  >About</a>
+    <a    routerLink="/mymap"> MY MAP</a>
     <span style="flex: 1 0 auto;"></span>
    <a routerLink="/profile" *ngIf="loggedIn"><i class="fas fa-user "></i>{{ " "+username}} </a>
    
@@ -33,11 +34,12 @@
 
 
 	<mat-sidenav-container class="nav-container" autosize>
-  	<mat-sidenav #snav [(mode)]="sideNavMode"  [(opened)]="sideNavOpened"  > 
+  	<mat-sidenav #snav [(mode)]="sideNavMode"  [(opened)]="sideNavOpened" fullscreen > 
 		<app-side-bar></app-side-bar>	
 	</mat-sidenav>
 		<mat-sidenav-content >
 				<router-outlet ></router-outlet>
+                
 		</mat-sidenav-content>
 	</mat-sidenav-container>
 

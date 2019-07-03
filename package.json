@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@agm/core": "^1.0.0-beta.5",
+    "@agm/core": "^1.0.0-beta.6",
     "@angular/animations": "^6.0.2",
     "@angular/cdk": "^6.4.7",
     "@angular/common": "^6.0.2",
@@ -25,6 +25,9 @@
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
     "@covalent/text-editor": "^2.0.0-beta.2",
+    "@google/maps": "^0.5.5",
+    "@types/googlemaps": "^3.36.5",
+    "angular-google-maps": "^2.4.1",
     "angular-hammer": "^2.2.0",
     "angularfire2": "^5.0.0-rc.12",
     "angularx-qrcode": "^1.2.4",

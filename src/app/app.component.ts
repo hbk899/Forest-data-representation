@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-
+import {} from 'googlemaps';
 import { MatSnackBar, MatDialog } from '@angular/material';
 import { AuthService } from './_services/auth.service';
 import PlantifyUser from './schema/user';

@@ -20,7 +20,7 @@ export class MainService {
 
 
     getByIdAndCollection(collection: string, id: string): Promise<any> {
-
+        console.log("i was called");
         return new Promise<any>((resolve, reject) => {
             this.db.collection(collection).doc(id).ref.get()
 

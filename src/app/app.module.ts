@@ -23,6 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { ArticleNewComponent } from './article-new/article-new.component';
 import { SigninComponent } from './signin/signin.component';
 import { ProfileComponent } from './profile/profile.component';
+
 //import { AuthGuard } from "./_services/auth.gaurd";
 
 import { FormsModule } from '@angular/forms';
@@ -39,6 +40,9 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { AgmCoreModule } from '@agm/core';
 import { ArticlesMyComponent } from './articles-my/articles-my.component';
+import { MyMapComponent } from './my-map/my-map.component';
+import { MarkerdetailComponent } from './markerdetail/markerdetail.component';
+
 
 
 @NgModule({
@@ -52,6 +56,9 @@ import { ArticlesMyComponent } from './articles-my/articles-my.component';
     SigninComponent,
     ProfileComponent,
     ArticlesMyComponent,
+    MyMapComponent,
+    MarkerdetailComponent,
+    
   
   ],
   imports: [
@@ -95,7 +102,7 @@ import { ArticlesMyComponent } from './articles-my/articles-my.component';
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     QRCodeModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAfJTW8goiBeq62CEHFcI4l3rG57rKCc7E'
+      apiKey: 'AIzaSyBt4GWgutgc8URi0kHpyRT_S720WGONf8s'
     }),
 
   ],

@@ -1,0 +1,48 @@
+
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav #mapsidenav  >
+    <p><button mat-button (click)="mapsidenav.toggle()">Toggle</button></p>
+    <h3>{{sidenavdata.label}} </h3>
+    
+     <a mat-button routerLink="/markerdetail/{{sidenavdata.label}}" >
+                        <i class="far fa-tree"></i> &nbsp;&nbsp; Show Details</a>
+  
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <agm-map 
+
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="true"
+  (mapClick)="mapClicked($event)">
+<p>pARA</p>
+  <agm-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="mapsidenav.toggle();clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]=""
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)">
+      
+   <!--<agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window> -->
+    
+  </agm-marker>
+  
+  <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
+      [radius]="5000"
+      [fillColor]="'red'"
+      [circleDraggable]="false"
+      [editable]="true">
+  </agm-circle>
+
+</agm-map>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
