@@ -11,37 +11,59 @@
   
     <span class="header-padding"></span>
     <a  *ngIf="isMobile"  (click)="snav.toggle()"><mat-icon>menu</mat-icon></a>
-    <a routerLink="/">Home</a>
+    
     <!--<a  routerLink="/signin" *ngIf="!loggedIn">Sign In</a>-->
+    <a   *ngIf="!isMobile"   routerLink="/">Our Map</a>
+    <a   *ngIf="!isMobile" routerLink="/publications">My Publications  </a>
+
+    <a     *ngIf="!isMobile" routerLink="/about"  >About</a>
     
     
-    <a   *ngIf="loggedIn&&!isMobile"   routerLink="/myarticles">My Publications</a>
-    <a     routerLink="/about"  >About</a>
-    <a    routerLink="/mymap"> MY MAP</a>
     <span style="flex: 1 0 auto;"></span>
    <a routerLink="/profile" *ngIf="loggedIn"><i class="fas fa-user "></i>{{ " "+username}} </a>
    
-    <a [matMenuTriggerFor]="menu"  ><i class="fas fa-cog"></i></a>
-<mat-menu #menu="matMenu"  yPosition="below" [overlapTrigger]="false">
-  
-  <button  mat-menu-item *ngIf="loggedIn"  (click)="logout()"  >Logout</button>
-   <button  mat-menu-item   routerLink="/signin" *ngIf="notloggedIn" >Sign In</button>
-</mat-menu>
-   
+    
 
     <span class="header-padding"></span>
 </mat-toolbar>
 
 
-	<mat-sidenav-container class="nav-container" autosize>
+	<mat-sidenav-container class="nav-container" autosize >
   	<mat-sidenav #snav [(mode)]="sideNavMode"  [(opened)]="sideNavOpened" fullscreen > 
-		<app-side-bar></app-side-bar>	
+		 <nav class="menu">
+          <a mat-button routerLink="/" (click)="snav.toggle()"> <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Our Map</a>
+          <a mat-button routerLink="/publications" (click)="snav.toggle()"> <i class="fas fa-edit"></i>&nbsp;&nbsp;Publications</a>
+          <p class="section-heading" >Personal</p>
+           <a mat-button  routerLink="/about"  (click)="snav.toggle()"><i class="fas fa-user "></i>&nbsp;&nbsp; About Us</a>
+           <a mat-button    (click)="snav.toggle()"><i class="far fa-comment-dots"></i>&nbsp;&nbsp; Feedback</a>
+          
+  </nav>
+	
 	</mat-sidenav>
-		<mat-sidenav-content >
+		<mat-sidenav-content  >
 				<router-outlet ></router-outlet>
                 
 		</mat-sidenav-content>
 	</mat-sidenav-container>
+
+
+
+    <mat-toolbar class="toolbar app-toolbar" color="primary"   (window:resize)="refresh()"  *ngIf="!loading">
+  
+    <span class="header-padding"></span>
+    
+    
+    <!--<a  routerLink="/signin" *ngIf="!loggedIn">Sign In</a>-->
+    
+    <a    >Footer 1</a>
+    <a     >Footer 2</a>
+    <a        >Footer 3</a>
+    
+    
+    <span style="flex: 1 0 auto;"></span>
+   
+</mat-toolbar>
+
 
 </body>
 

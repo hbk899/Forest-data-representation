@@ -541,7 +541,7 @@ module.exports = ".title{\r\nfont-size: 4ch;\r\nfont-family: Verdana, Geneva, Ta
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <app-header></app-header> -->\r\n<div class=\"row\">\r\n\r\n  <div class=\"col-for-sides\" ></div>\r\n\r\n  <div class=\"col-for-page padding-responsive\">\r\n\r\n    <div *ngIf=\"isLoggedIn\">WELCOME</div>\r\n    \r\n    <div *ngIf=\"!isLoggedIn\">not logged in</div>\r\n\r\n\r\n    <div class=\"list-item-wrapper\" *ngFor=\"let article of articlesList\">\r\n      <mat-card class=\"task-card\">\r\n        <mat-card-header>\r\n          <div mat-card-avatar>\r\n\r\n            <!-- <cl-image public-id=\"{{task.dpImgUrl}}\">\r\n              <cl-transformation width=\"40\" height=\"40\" gravity=\"face\" radius=\"100\" crop=\"thumb\">\r\n              </cl-transformation>\r\n\r\n\r\n\r\n            </cl-image> -->\r\n\r\n\r\n          </div>\r\n          <mat-card-title><h1><markdown [data]=\"article.title \"></markdown></h1></mat-card-title>\r\n                        <mat-card-subtitle>      <markdown [data]=\"article.author\"></markdown>\r\n                               </mat-card-subtitle>\r\n        </mat-card-header>\r\n        <mat-card-content>\r\n        \r\n            <markdown   [data]=\"article.description\" ></markdown>\r\n           \r\n         <mat-tab-group headerPosition=\"above\">\r\n  <mat-tab ><ng-template mat-tab-label><i class=\"material-icons\">\r\n    add_comment\r\n</i> </ng-template> New Solutions\r\n\r\n <div class=\"list-item-wrapper\" *ngFor=\"let comment of article.comments \">\r\n            <markdown [data] =\"comment\">\r\n            \r\n            \r\n            </markdown>\r\n\r\n            </div>\r\n            \r\n\r\n </mat-tab>\r\n\r\n\r\n<mat-tab ><ng-template mat-tab-label><i class=\"material-icons\">\r\n    check\r\n</i> </ng-template> Existing Solutions </mat-tab>\r\n\r\n\r\n\r\n</mat-tab-group>\r\n        </mat-card-content>\r\n         <mat-card-actions>\r\n    <button mat-button (click)=\"liking(article.id)\" >LIKE</button>\r\n    <button mat-button>SHARE</button>\r\n  </mat-card-actions>\r\n      </mat-card>\r\n\r\n\r\n    </div>\r\n\r\n\r\n    <mat-paginator [length]=\"noOfAssignments\"\r\n              [pageSize]=\"pageSize\"\r\n              [pageSizeOptions]=\"pageSizeOptions\"\r\n              >\r\n              <!-- (page)=\"pageEvent = $event\" -->\r\n    </mat-paginator>\r\n\r\n\r\n\r\n\r\n\r\n  </div>\r\n\r\n \r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n \r\n  \r\n   "
+module.exports = "<!-- <app-header></app-header> -->\r\n<div class=\"row\">\r\n\r\n  <div class=\"col-for-sides \" ></div>\r\n\r\n  <div class=\"col-for-page padding-responsive\">\r\n\r\n    <div *ngIf=\"isLoggedIn\">WELCOME</div>\r\n    \r\n    <div *ngIf=\"!isLoggedIn\">not logged in</div>\r\n\r\n\r\n    <div class=\"list-item-wrapper\" *ngFor=\"let article of articlesList\">\r\n      <mat-card class=\"task-card\">\r\n        <mat-card-header>\r\n          <div mat-card-avatar>\r\n\r\n            <!-- <cl-image public-id=\"{{task.dpImgUrl}}\">\r\n              <cl-transformation width=\"40\" height=\"40\" gravity=\"face\" radius=\"100\" crop=\"thumb\">\r\n              </cl-transformation>\r\n\r\n\r\n\r\n            </cl-image> -->\r\n\r\n\r\n          </div>\r\n          <mat-card-title><h1><markdown [data]=\"article.title \"></markdown></h1></mat-card-title>\r\n                        <mat-card-subtitle>      <markdown [data]=\"article.author\"></markdown>\r\n                               </mat-card-subtitle>\r\n        </mat-card-header>\r\n        <mat-card-content>\r\n        \r\n            <markdown   [data]=\"article.description\" ></markdown>\r\n           \r\n         <mat-tab-group headerPosition=\"above\">\r\n  <mat-tab ><ng-template mat-tab-label><i class=\"material-icons\">\r\n    add_comment\r\n</i> </ng-template> New Solutions\r\n\r\n <div class=\"list-item-wrapper\" *ngFor=\"let comment of article.comments \">\r\n            <markdown [data] =\"comment\">\r\n            \r\n            \r\n            </markdown>\r\n\r\n            </div>\r\n            \r\n\r\n </mat-tab>\r\n\r\n\r\n<mat-tab ><ng-template mat-tab-label><i class=\"material-icons\">\r\n    check\r\n</i> </ng-template> Existing Solutions </mat-tab>\r\n\r\n\r\n\r\n</mat-tab-group>\r\n        </mat-card-content>\r\n         <mat-card-actions>\r\n    <button mat-button (click)=\"liking(article.id)\" >LIKE</button>\r\n    <button mat-button>SHARE</button>\r\n  </mat-card-actions>\r\n      </mat-card>\r\n\r\n\r\n    </div>\r\n\r\n\r\n    <mat-paginator [length]=\"noOfAssignments\"\r\n              [pageSize]=\"pageSize\"\r\n              [pageSizeOptions]=\"pageSizeOptions\"\r\n              >\r\n              <!-- (page)=\"pageEvent = $event\" -->\r\n    </mat-paginator>\r\n\r\n\r\n\r\n\r\n\r\n  </div>\r\n\r\n \r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n \r\n  \r\n   "
 
 /***/ }),
 
@@ -753,13 +753,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     // { path: '', component: ArifMainComponent },
-    { path: '', component: _a_main_a_main_component__WEBPACK_IMPORTED_MODULE_2__["AMainComponent"] },
+    { path: 'publications', component: _a_main_a_main_component__WEBPACK_IMPORTED_MODULE_2__["AMainComponent"] },
     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_3__["AboutComponent"] },
     { path: 'signin', component: _signin_signin_component__WEBPACK_IMPORTED_MODULE_4__["SigninComponent"] },
     { path: 'articleNew', component: _article_new_article_new_component__WEBPACK_IMPORTED_MODULE_6__["ArticleNewComponent"] },
     { path: 'profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_5__["ProfileComponent"] },
     { path: 'myarticles', component: _articles_my_articles_my_component__WEBPACK_IMPORTED_MODULE_7__["ArticlesMyComponent"] },
-    { path: 'mymap', component: _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_8__["MyMapComponent"] },
+    { path: '', component: _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_8__["MyMapComponent"] },
     { path: 'markerdetail', component: _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_9__["MarkerdetailComponent"] },
     { path: 'markerdetail/:id', component: _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_9__["MarkerdetailComponent"] }
 ];
@@ -791,7 +791,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "example-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n\r\n.example-is-mobile .example-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\n\r\n.basic-container {\r\n  padding: 30px;\r\n}\r\n\r\n.toolbar{\r\n   overflow: hidden;\r\n   padding: 20px 10px;\r\n   text-decoration: none\r\n }\r\n\r\n.toolbar a{\r\n  padding: 12px;\r\n  text-decoration: none;\r\n }\r\n\r\n.toolbar a.active {\r\n  background-color: dodgerblue;\r\n  color: white;\r\n}\r\n\r\n#snav{\r\n  overflow: hidden;\r\n}"
+module.exports = "example-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n\r\n.example-is-mobile .example-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\n\r\n.basic-container {\r\n  padding: 30px;\r\n}\r\n\r\n.toolbar{\r\n   overflow: hidden;\r\n   padding: 20px 10px;\r\n   text-decoration: none\r\n }\r\n\r\n.toolbar a{\r\n  padding: 12px;\r\n  text-decoration: none;\r\n }\r\n\r\n.toolbar a.active {\r\n  background-color: dodgerblue;\r\n  color: white;\r\n}\r\n\r\n#snav{\r\n  height: -webkit-fit-content;\r\n  height: -moz-fit-content;\r\n  height: fit-content;\r\n}\r\n\r\n.menu{\r\n  max-width: 250px;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n  overflow: hidden;\r\n}\r\n\r\nnav a,p{\r\n  width: 100%;\r\n  text-decoration: none;\r\n  background-color: #eee;\r\n}\r\n\r\nnav a{\r\n  text-align: left;\r\n  font-size: 120%;\r\n  padding: 5px 10px;\r\n}\r\n\r\n/* nav *:visited, a:link {\r\n} */\r\n\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n\r\n.section-heading{\r\n  text-align: center;\r\n  padding: 0px 10px;\r\n  font-weight: bold;\r\n  \r\n}\r\n\r\n.app-toolbar {\r\n  position: sticky;\r\n  position: -webkit-sticky; /* For macOS/iOS Safari */\r\n  bottom:  0; /* Sets the sticky toolbar to be on top */\r\n  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */\r\n}\r\n\r\n.pwa{\r\n  padding: 5px;\r\n  font-size: 80%;\r\n  text-align: center;\r\n  position: relative;\r\n  bottom: 0;\r\n}\r\n\r\n@media only screen and (min-width: 600px) {\r\n    /* For tablets: */\r\n\r\n    nav a:hover {\r\n    color: #314947;\r\n    background-color: #CFD8DC;\r\n  }\r\n    \r\n}"
 
 /***/ }),
 
@@ -802,7 +802,7 @@ module.exports = "example-container {\r\n  display: flex;\r\n  flex-direction: c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<html>\r\n<head>\r\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n</head>\r\n\r\n<body *ngIf=\"!loading\">\r\n\r\n\r\n  <!--this is toolbar-->\r\n\t<mat-toolbar class=\"toolbar\" color=\"primary\"   (window:resize)=\"refresh()\">\r\n  \r\n    <span class=\"header-padding\"></span>\r\n    <a  *ngIf=\"isMobile\"  (click)=\"snav.toggle()\"><mat-icon>menu</mat-icon></a>\r\n    <a routerLink=\"/\">Home</a>\r\n    <!--<a  routerLink=\"/signin\" *ngIf=\"!loggedIn\">Sign In</a>-->\r\n    \r\n    \r\n    <a   *ngIf=\"loggedIn&&!isMobile\"   routerLink=\"/myarticles\">My Publications</a>\r\n    <a     routerLink=\"/about\"  >About</a>\r\n    <a    routerLink=\"/mymap\"> MY MAP</a>\r\n    <span style=\"flex: 1 0 auto;\"></span>\r\n   <a routerLink=\"/profile\" *ngIf=\"loggedIn\"><i class=\"fas fa-user \"></i>{{ \" \"+username}} </a>\r\n   \r\n    <a [matMenuTriggerFor]=\"menu\"  ><i class=\"fas fa-cog\"></i></a>\r\n<mat-menu #menu=\"matMenu\"  yPosition=\"below\" [overlapTrigger]=\"false\">\r\n  \r\n  <button  mat-menu-item *ngIf=\"loggedIn\"  (click)=\"logout()\"  >Logout</button>\r\n   <button  mat-menu-item   routerLink=\"/signin\" *ngIf=\"notloggedIn\" >Sign In</button>\r\n</mat-menu>\r\n   \r\n\r\n    <span class=\"header-padding\"></span>\r\n</mat-toolbar>\r\n\r\n\r\n\t<mat-sidenav-container class=\"nav-container\" autosize>\r\n  \t<mat-sidenav #snav [(mode)]=\"sideNavMode\"  [(opened)]=\"sideNavOpened\" fullscreen > \r\n\t\t<app-side-bar></app-side-bar>\t\r\n\t</mat-sidenav>\r\n\t\t<mat-sidenav-content >\r\n\t\t\t\t<router-outlet ></router-outlet>\r\n                \r\n\t\t</mat-sidenav-content>\r\n\t</mat-sidenav-container>\r\n\r\n</body>\r\n\r\n\r\n</html>\r\n\r\n\r\n<!--\r\nCopyright 2017-2018 Google Inc. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at http://angular.io/license\r\n-->\r\n"
+module.exports = "<html>\r\n<head>\r\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n</head>\r\n\r\n<body *ngIf=\"!loading\">\r\n\r\n\r\n  <!--this is toolbar-->\r\n\t<mat-toolbar class=\"toolbar\" color=\"primary\"   (window:resize)=\"refresh()\">\r\n  \r\n    <span class=\"header-padding\"></span>\r\n    <a  *ngIf=\"isMobile\"  (click)=\"snav.toggle()\"><mat-icon>menu</mat-icon></a>\r\n    \r\n    <!--<a  routerLink=\"/signin\" *ngIf=\"!loggedIn\">Sign In</a>-->\r\n    <a   *ngIf=\"!isMobile\"   routerLink=\"/\">Our Map</a>\r\n    <a   *ngIf=\"!isMobile\" routerLink=\"/publications\">My Publications  </a>\r\n\r\n    <a     *ngIf=\"!isMobile\" routerLink=\"/about\"  >About</a>\r\n    \r\n    \r\n    <span style=\"flex: 1 0 auto;\"></span>\r\n   <a routerLink=\"/profile\" *ngIf=\"loggedIn\"><i class=\"fas fa-user \"></i>{{ \" \"+username}} </a>\r\n   \r\n    \r\n\r\n    <span class=\"header-padding\"></span>\r\n</mat-toolbar>\r\n\r\n\r\n\t<mat-sidenav-container class=\"nav-container\" autosize >\r\n  \t<mat-sidenav #snav [(mode)]=\"sideNavMode\"  [(opened)]=\"sideNavOpened\" fullscreen > \r\n\t\t <nav class=\"menu\">\r\n          <a mat-button routerLink=\"/\" (click)=\"snav.toggle()\"> <i class=\"fas fa-map-marker-alt\"></i>&nbsp;&nbsp;Our Map</a>\r\n          <a mat-button routerLink=\"/publications\" (click)=\"snav.toggle()\"> <i class=\"fas fa-edit\"></i>&nbsp;&nbsp;Publications</a>\r\n          <p class=\"section-heading\" >Personal</p>\r\n           <a mat-button  routerLink=\"/about\"  (click)=\"snav.toggle()\"><i class=\"fas fa-user \"></i>&nbsp;&nbsp; About Us</a>\r\n           <a mat-button    (click)=\"snav.toggle()\"><i class=\"far fa-comment-dots\"></i>&nbsp;&nbsp; Feedback</a>\r\n          \r\n  </nav>\r\n\t\r\n\t</mat-sidenav>\r\n\t\t<mat-sidenav-content  >\r\n\t\t\t\t<router-outlet ></router-outlet>\r\n                \r\n\t\t</mat-sidenav-content>\r\n\t</mat-sidenav-container>\r\n\r\n\r\n\r\n    <mat-toolbar class=\"toolbar app-toolbar\" color=\"primary\"   (window:resize)=\"refresh()\"  *ngIf=\"!loading\">\r\n  \r\n    <span class=\"header-padding\"></span>\r\n    \r\n    \r\n    <!--<a  routerLink=\"/signin\" *ngIf=\"!loggedIn\">Sign In</a>-->\r\n    \r\n    <a    >Footer 1</a>\r\n    <a     >Footer 2</a>\r\n    <a        >Footer 3</a>\r\n    \r\n    \r\n    <span style=\"flex: 1 0 auto;\"></span>\r\n   \r\n</mat-toolbar>\r\n\r\n\r\n</body>\r\n\r\n\r\n</html>\r\n\r\n\r\n<!--\r\nCopyright 2017-2018 Google Inc. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at http://angular.io/license\r\n-->\r\n"
 
 /***/ }),
 
@@ -1547,7 +1547,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".image-container{\r\n\r\n    padding: 10px\r\n}"
+module.exports = ".image-container{\r\n\r\n    padding: 10px\r\n}\r\n.detail-card{\r\n   min-height: 70%;\r\n   height: auto;\r\n   margin: auto;\r\n}\r\n.header-less-tabs.mat-tab-group .mat-tab-header {\r\n display: none;\r\n  }\r\n@media (max-width: 600px) {\r\n    .module {\r\n      font-size: 10px;\r\n      max-height: 75px; }\r\n  }\r\n@media (max-width: 1024px) {\r\n    .grid {\r\n      margin: 0;\r\n    }\r\n    .module {\r\n      min-width: 60px;\r\n    }\r\n  }"
 
 /***/ }),
 
@@ -1558,7 +1558,7 @@ module.exports = ".image-container{\r\n\r\n    padding: 10px\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n<div class=\"col-for-sides\" >\ns simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n</div>\n<div class=\"col-for-page padding-responsive\">\n\n  Here we show details of{{markerid}}\n  <div class= \"image-container\"> \n  <img [src]=\"'https://firebasestorage.googleapis.com/v0/b/forest-data-representation.appspot.com/o/forest-yearly-pictures%2Fabbottabad%2F0.png?alt=media&token=89a1a654-7d2e-4a1a-a186-300320b4b842'\">\n</div>\n</div>\n</div>"
+module.exports = "<div class=\"row \">\n<div class=\"col-for-sides\" ></div>\n<div class=\" col-for-page padding-responsive \"style='min-height:800px'>\n\n\n\n<mat-tab-group class=\"header-less-tabs center-horizontal detail-card\" [selectedIndex]=\"selected.value\"\n               (selectedIndexChange)=\"selected.setValue($event)\"\n               \n              \n               >\n  <mat-tab *ngFor=\"let tab of imagearray; let index = index\" [label]=\"((index <= imagearray.length-2) ? +'2013' +index : 'Change Image')\">\n   <mat-card class=\"task-card \"  >\n        <mat-card-header>\n          <div mat-card-avatar>\n        </div>\n          <mat-card-title><h1>Forest Data Representation for {{markerdetail.label}}</h1></mat-card-title>\n                       \n                              \n        </mat-card-header>\n        <mat-spinner class=\"centered-horizontal\" diameter=\"40\" *ngIf=\"loading\"></mat-spinner>\n         <img mat-card-image id=\"anidiv\" src={{imagearray[index]}} *ngIf=\"!loading\" alt=\"Photo of \">\n\n        \n        <mat-card-content>\n        \n     \n     <h1>{{showyear}}\n</h1>\n\n \n        </mat-card-content>\n         <mat-card-actions>\n         \n \n  </mat-card-actions>\n      </mat-card>\n\n    <button mat-raised-button\n            class=\"example-delete-tab-button\"\n            [disabled]=\"selected.value === imagearray.length -1\"\n            (click)=\"next()\"\n            color =\"accent\"\n            [disableRipple]=\"false\"\n    >\n      Next\n    </button>\n    <button mat-raised-button\n            class=\"example-delete-tab-button\"\n            [disabled]=\"selected.value === 0\"\n            (click)=\"previous()\"\n            color =\"green\"\n    >\n     Back\n    </button>\n  </mat-tab>\n</mat-tab-group>\n\n\n\n\n</div>\n\n</div>"
 
 /***/ }),
 
@@ -1572,11 +1572,12 @@ module.exports = "<div class=\"row\">\n<div class=\"col-for-sides\" >\ns simply 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarkerdetailComponent", function() { return MarkerdetailComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_services/main.service */ "./src/app/_services/main.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_services/main.service */ "./src/app/_services/main.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1590,34 +1591,80 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MarkerdetailComponent = /** @class */ (function () {
     function MarkerdetailComponent(mainService, db, route) {
         this.mainService = mainService;
         this.db = db;
         this.route = route;
+        this.imagearray = [];
+        this.loading = false;
+        this.startyear = 2013;
+        this.showyear = 2013;
+        this.animateclicked = false;
+        this.markerdetail = {};
+        this.tabs = ['First', 'Second', 'Third'];
+        this.selected = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](0);
     }
     MarkerdetailComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.loading = true;
         this.markerid = this.route.snapshot.paramMap.get('id');
         console.log(" got label from other page ", this.markerid);
-        this.mainService.getByIdAndCollection('marker', 'zA7WAB5WXymmjWWCGxk0')
+        this.mainService.getByIdAndCollection('marker', this.markerid)
             .then(function (list) {
-            _this.makerdetail = list;
-            console.log(_this.makerdetail);
+            console.log("here we are");
+            _this.markerdetail = list;
+            _this.imagearray = list.picurl;
+            _this.imagesrc = list.picurl[0];
+            console.log(_this.markerdetail.lat);
+            _this.loading = false;
         })
             .catch(function (err) {
             console.log(err);
         });
     };
+    MarkerdetailComponent.prototype.next = function () {
+        var temp = this.selected.value;
+        temp++;
+        this.showyear = this.startyear + temp;
+        temp = (temp) % this.imagearray.length;
+        this.selected.setValue(temp);
+        console.log("current index", temp);
+        this.loading = false;
+    };
+    MarkerdetailComponent.prototype.previous = function () {
+        var temp = this.selected.value;
+        temp--;
+        this.showyear = this.startyear + temp;
+        temp = (temp) % this.imagearray.length;
+        this.selected.setValue(temp);
+        console.log("current index", temp);
+        this.loading = false;
+    };
+    MarkerdetailComponent.prototype.addTab = function (selectAfterAdding) {
+        this.tabs.push('New');
+        if (selectAfterAdding) {
+            this.selected.setValue(this.tabs.length - 1);
+        }
+    };
+    MarkerdetailComponent.prototype.removeTab = function (index) {
+        this.tabs.splice(index, 1);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"])('anidiv'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"])
+    ], MarkerdetailComponent.prototype, "animatediv", void 0);
     MarkerdetailComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
             selector: 'app-markerdetail',
             template: __webpack_require__(/*! ./markerdetail.component.html */ "./src/app/markerdetail/markerdetail.component.html"),
-            styles: [__webpack_require__(/*! ./markerdetail.component.css */ "./src/app/markerdetail/markerdetail.component.css")]
+            styles: [__webpack_require__(/*! ./markerdetail.component.css */ "./src/app/markerdetail/markerdetail.component.css")],
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None
         }),
-        __metadata("design:paramtypes", [_services_main_service__WEBPACK_IMPORTED_MODULE_3__["MainService"],
-            angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_services_main_service__WEBPACK_IMPORTED_MODULE_2__["MainService"],
+            angularfire2_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_0__["ActivatedRoute"]])
     ], MarkerdetailComponent);
     return MarkerdetailComponent;
 }());
@@ -1706,7 +1753,7 @@ var DemoMaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "agm-map {\r\n    height: 400px;\r\n    width: 100%;  /* This is really important*/\r\n  }"
+module.exports = "\r\n  .map-wrapper {\r\n    height: 600px;}\r\nagm-map {\r\n   \r\n    width: 100%;  /* This is really important*/\r\n    height: 100%;\r\n    \r\n  }\r\n#mapsidenav{\r\n    width: 30%\r\n  }\r\n"
 
 /***/ }),
 
@@ -1717,7 +1764,7 @@ module.exports = "agm-map {\r\n    height: 400px;\r\n    width: 100%;  /* This i
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<mat-sidenav-container class=\"example-container\" >\r\n  <mat-sidenav #mapsidenav  >\r\n    <p><button mat-button (click)=\"mapsidenav.toggle()\">Toggle</button></p>\r\n    <h3>{{sidenavdata.label}} </h3>\r\n    \r\n     <a mat-button routerLink=\"/markerdetail/{{sidenavdata.label}}\" >\r\n                        <i class=\"far fa-tree\"></i> &nbsp;&nbsp; Show Details</a>\r\n  \r\n    \r\n  </mat-sidenav>\r\n\r\n  <mat-sidenav-content>\r\n    <agm-map \r\n\r\n  [latitude]=\"lat\"\r\n  [longitude]=\"lng\"\r\n  [zoom]=\"zoom\"\r\n  [disableDefaultUI]=\"false\"\r\n  [zoomControl]=\"true\"\r\n  (mapClick)=\"mapClicked($event)\">\r\n<p>pARA</p>\r\n  <agm-marker \r\n      *ngFor=\"let m of markers; let i = index\"\r\n      (markerClick)=\"mapsidenav.toggle();clickedMarker(m.label, i)\"\r\n      [latitude]=\"m.lat\"\r\n      [longitude]=\"m.lng\"\r\n      [label]=\"\"\r\n      [markerDraggable]=\"m.draggable\"\r\n      (dragEnd)=\"markerDragEnd(m, $event)\">\r\n      \r\n   <!--<agm-info-window>\r\n      <strong>InfoWindow content</strong>\r\n    </agm-info-window> -->\r\n    \r\n  </agm-marker>\r\n  \r\n  <agm-circle [latitude]=\"lat + 0.3\" [longitude]=\"lng\" \r\n      [radius]=\"5000\"\r\n      [fillColor]=\"'red'\"\r\n      [circleDraggable]=\"false\"\r\n      [editable]=\"true\">\r\n  </agm-circle>\r\n\r\n</agm-map>\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n\r\n"
+module.exports = "\r\n<mat-sidenav-container class=\"example-container\" >\r\n  <mat-sidenav id=\"mapsidenav\" #mapsidenav>\r\n    <p><button mat-button (click)=\"mapsidenav.toggle()\">&nbsp;&nbsp;Close</button></p>\r\n    <h3>{{sidenavdata.label}} </h3>\r\n    \r\n     <a mat-button routerLink=\"/markerdetail/{{sidenavdata.id}}\" >\r\n                        <i class=\"fas fa-tree\"></i> &nbsp;&nbsp; Show Details</a>\r\n  \r\n    \r\n  </mat-sidenav>\r\n\r\n  <mat-sidenav-content class=\"map-wrapper\"  id=\"wrapper\" #wrapper>\r\n   \r\n    <agm-map \r\n   id=\"AgmMap\"\r\n   (idle)=\"idle()\"\r\n      (centerChange)=\"centerChange($event)\"\r\n  [latitude]=\"lat\"\r\n  [longitude]=\"lng\"\r\n  [zoom]=\"zoom\"\r\n  [disableDefaultUI]=\"false\"\r\n  [zoomControl]=\"true\"\r\n  (mapClick)=\"mapClicked($event)\"\r\n  (zoomChange)=\"handlezoomchange($event)\">\r\n    #AgmMap\r\n  <agm-marker \r\n      *ngFor=\"let m of mapdata; let i = index\"\r\n      (markerClick)=\"mapsidenav.toggle();clickedMarker(m)\"\r\n      [latitude]=\"m.polygon[0].lat -0.001\"\r\n      [longitude]=\"m.polygon[0].lng -0.001\"\r\n      [label]=\"\"\r\n      [markerDraggable]=\"m.draggable\"\r\n      (dragEnd)=\"markerDragEnd(m, $event)\"\r\n      [iconUrl]=\"'http://maps.google.com/mapfiles/ms/icons/green-dot.png'\"\r\n      (mouseOver)=\"mouseOver($event)\">\r\n  \r\n  >\r\n   \r\n    \r\n  </agm-marker>\r\n  \r\n  \r\n  \r\n\r\n\r\n  \r\n <agm-polygon     *ngFor=\"let m of mapdata; let i = index\"  [paths]=\"m.polygon\"  (polyClick)=\"onPolyclick(m);mapsidenav.toggle()\"  [visible]=\"showpoly\" [fillColor]=\"'#98FB98'\">\r\n       \r\n   \r\n</agm-polygon>\r\n\r\n</agm-map>\r\n\r\n\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n\r\n"
 
 /***/ }),
 
@@ -1747,11 +1794,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var MyMapComponent = /** @class */ (function () {
     function MyMapComponent(db, mainService) {
         this.db = db;
         this.mainService = mainService;
         this.zoom = 5;
+        this.mapdata = [];
+        this.showpoly = false;
         // initial center position for the map
         this.lat = 30.3753;
         this.lng = 69.3451;
@@ -1760,31 +1812,64 @@ var MyMapComponent = /** @class */ (function () {
             label: "",
             id: ""
         };
-        this.markers = [
-            {
-                lat: 34.178519,
-                lng: 73.241704,
-                label: 'Abbottabad',
-                draggable: false
-            },
-            {
-                lat: 34.672185,
-                lng: 73.024149,
-                label: 'Batagram',
-                draggable: false
-            },
-            {
-                lat: 34.530285,
-                lng: 72.309277,
-                label: 'Buner',
-                draggable: false
-            }
-        ];
     }
-    MyMapComponent.prototype.clickedMarker = function (label, index) {
-        console.log("clicked the marker: " + index);
-        this.sidenavdata.label = label;
-        console.log("side nav: ", this.sidenavdata.label);
+    MyMapComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.mainService.getCollection("marker")
+            .then(function (list) {
+            list.forEach(function (element) {
+                _this.mapdata.push(element);
+            });
+        })
+            .catch(function (err) {
+            console.log(err);
+        });
+    };
+    MyMapComponent.prototype.ngAfterViewInit = function () {
+        this.renderer.setElementStyle(this.wrapper.nativeElement, 'height', (window.innerHeight) + 'px');
+        console.log("ng on view");
+    };
+    MyMapComponent.prototype.onWindowResize = function () {
+        console.log("calling on resize");
+        this.onResize();
+    };
+    MyMapComponent.prototype.onResize = function () {
+        var _this = this;
+        // resize the container for the google map
+        this.renderer.setElementStyle(this.wrapper.nativeElement, 'height', (window.innerHeight) + 'px');
+        // recenters the map to the resized area.
+        this.agmMap.triggerResize().then(function () {
+            return _this.agmMap._mapsWrapper.setCenter({ lat: _this.centerLat, lng: _this.centerLng });
+        });
+    };
+    // idle fires after paning or zooming is done. 
+    // This is where we want to capture the center of the map.
+    // This way if the user resizes, the center is preserved.
+    MyMapComponent.prototype.idle = function () {
+        this.centerLat = this.changeLat;
+        this.centerLng = this.changeLng;
+    };
+    // this event fires whenever any event changes the center. Panning, zooming, or resizing.
+    MyMapComponent.prototype.centerChange = function (event) {
+        if (event) {
+            this.changeLat = event.lat;
+            this.changeLng = event.lng;
+        }
+    };
+    MyMapComponent.prototype.clickedMarker = function (clickedMarker) {
+        console.log("clicked the marker: " + clickedMarker.label);
+        this.sidenavdata = clickedMarker;
+    };
+    MyMapComponent.prototype.handlezoomchange = function (znumber) {
+        console.log("now zoom is", znumber);
+        if (znumber > 6) {
+            this.showpoly = true;
+        }
+        else if (znumber <= 6)
+            this.showpoly = false;
+    };
+    MyMapComponent.prototype.mouseOver = function ($event) {
+        console.log("now mouse is", $event);
     };
     MyMapComponent.prototype.mapClicked = function ($event) {
         return;
@@ -1792,30 +1877,68 @@ var MyMapComponent = /** @class */ (function () {
     MyMapComponent.prototype.markerDragEnd = function (m, $event) {
         console.log('dragEnd', m, $event);
     };
-    MyMapComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.mainService.getCollection("marker")
-            .then(function (list) {
-            _this.mapdata = list;
-            list.forEach(function (list) {
-                console.log('Found subcollection with id:', list.id);
+    MyMapComponent.prototype.onPolyclick = function (polygonclicked) {
+        console.log("this poly was click", polygonclicked);
+        this.sidenavdata = polygonclicked;
+    };
+    MyMapComponent.prototype.convertToLatLngLiteral = function (array) {
+        var result = new Array();
+        for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
+            var coords = array_1[_i];
+            result.push({
+                lat: coords[0],
+                lng: coords[1]
             });
-        })
-            .then(function (list) {
-            //this.articlesList = list;
-            console.log(_this.mapdata);
-            return "got documents from database";
-        })
-            .catch(function (err) {
-            console.log(err);
+        }
+        console.log("conversion success");
+        return result;
+    };
+    MyMapComponent.prototype.changedim = function (maker) {
+        var temp = maker.polygon;
+        var tempdim;
+        temp.forEach(function (element) {
+            tempdim = element.lat;
+            element.lat = element.lng;
+            element.lng = tempdim;
+        });
+        maker.polygon = temp;
+        //console.log("output dimensions",temp)
+        return (maker);
+    };
+    MyMapComponent.prototype.postpoly = function () {
+        var _this = this;
+        console.log(" i was called");
+        var allmarkers = this.mapdata;
+        allmarkers.forEach(function (element) {
+            console.log("sending data for :", element.label);
+            var id = element.id;
+            var poly = element.polygon;
+            _this.db.collection('marker').doc(id).update({
+                polygon: poly
+            });
         });
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('AgmMap'),
+        __metadata("design:type", Object)
+    ], MyMapComponent.prototype, "agmMap", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('wrapper'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
+    ], MyMapComponent.prototype, "wrapper", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('window:resize'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], MyMapComponent.prototype, "onWindowResize", null);
     MyMapComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-my-map',
             template: __webpack_require__(/*! ./my-map.component.html */ "./src/app/my-map/my-map.component.html"),
             styles: [__webpack_require__(/*! ./my-map.component.css */ "./src/app/my-map/my-map.component.css")]
         }),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"], _services_main_service__WEBPACK_IMPORTED_MODULE_1__["MainService"]])
     ], MyMapComponent);
     return MyMapComponent;
@@ -2155,7 +2278,7 @@ module.exports = ".menu{\r\n    max-width: 250px;\r\n    margin-top: 20px;\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div style=\"height: 100%;\">\r\n\r\n\r\n  \r\n\r\n  <nav class=\"menu\">\r\n\r\n          <a mat-button routerLink=\"/articleNew\" (click)=\"snav.toggle()\"> <i class=\"fas fa-edit\"></i>&nbsp;&nbsp;Write Article</a>\r\n          <p class=\"section-heading\" >Personal</p>\r\n           <a mat-button  routerLink=\"/profile\" *ngIf=\"isLoggedIn\" (click)=\"snav.toggle()\"><i class=\"fas fa-user \"></i>&nbsp;&nbsp; Profile</a>\r\n          <p class=\"section-heading\" >Other</p>\r\n          <a mat-button routerLink=\"/\" (click)=\"logout()\"> <i class=\"fas fa-edit\"></i>&nbsp;&nbsp;Logout</a>\r\n  </nav>\r\n\r\n\r\n\r\n <!--<p class=\"pwa\">This app is Progressive Web App which means it can run offline and you can add it to homescreen.</p> {% endcomment %}\r\n--> \r\n\r\n\r\n\r\n</div>"
+module.exports = "\r\n<div style=\"height: 100%;\">\r\n\r\n\r\n  \r\n\r\n  <nav class=\"menu\" #mainsnav id=\"mainsnav\">\r\n          <a mat-button routerLink=\"/mymap\" (click)=\"mainsnav.toggle()\"> <i class=\"fas fa-map-marker-alt\"></i>&nbsp;&nbsp;Our Map</a>\r\n          <a mat-button routerLink=\"/\" (click)=\"mainsnav.toggle()\"> <i class=\"fas fa-edit\"></i>&nbsp;&nbsp;Publications</a>\r\n          <p class=\"section-heading\" >Personal</p>\r\n           <a mat-button  routerLink=\"/about\"  (click)=\"snav.toggle()\"><i class=\"fas fa-user \"></i>&nbsp;&nbsp; About Us</a>\r\n           <a mat-button    (click)=\"mainsnav.toggle()\"><i class=\"far fa-comment-dots\"></i>&nbsp;&nbsp; Feedback</a>\r\n          \r\n  </nav>\r\n\r\n\r\n\r\n <!--<p class=\"pwa\">This app is Progressive Web App which means it can run offline and you can add it to homescreen.</p> {% endcomment %}\r\n--> \r\n\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -2281,7 +2404,7 @@ var SigninComponent = /** @class */ (function () {
         this.notifyService = notifyService;
         this.router = router;
         this.snackBar = snackBar;
-        this.bgUrl = 'http://backgroundcheckall.com/wp-content/uploads/2017/12/background-images-for-registration-page-10.jpg';
+        this.bgUrl = 'https://backgroundcheckall.com/wp-content/uploads/2017/12/background-images-for-registration-page-10.jpg';
         this.email = '';
         this.password = '';
         this.confirmPassword = '';

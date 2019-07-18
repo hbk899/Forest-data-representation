@@ -1,13 +1,70 @@
-<div class="row">
-<div class="col-for-sides" >
-s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+ <div class="container my-container">
+    <div class="row my-row">
+    <div class="col-md-8 my-col">show pictures here</div>
+     <div class="col-md-4 my-col">detail  here</div>
+    
+    </div>
+<div class="row ">
+
+<div class=" col-for-page padding-responsive "style='min-height:800px'>
+
+
+
+<mat-tab-group class="header-less-tabs center-horizontal detail-card" [selectedIndex]="selected.value"
+               (selectedIndexChange)="selected.setValue($event)"
+               
+              
+               >
+  <mat-tab *ngFor="let tab of imagearray; let index = index" [label]="((index <= imagearray.length-2) ? +'2013' +index : 'Change Image')">
+   <mat-card class="task-card "  >
+        <mat-card-header>
+          <div mat-card-avatar>
+        </div>
+          <mat-card-title><h1>Forest Data Representation for {{markerdetail.label}}</h1></mat-card-title>
+                       
+                              
+        </mat-card-header>
+        <mat-spinner class="centered-horizontal" diameter="40" *ngIf="loading"></mat-spinner>
+         <img mat-card-image id="anidiv" src={{imagearray[index]}} *ngIf="!loading" alt="Photo of ">
+
+        
+        <mat-card-content>
+        
+     
+     <h1>{{showyear}}
+</h1>
+
+ 
+        </mat-card-content>
+         <mat-card-actions>
+         
+ 
+  </mat-card-actions>
+      </mat-card>
+
+    <button mat-raised-button
+            class="example-delete-tab-button"
+            [disabled]="selected.value === imagearray.length -1"
+            (click)="next()"
+            color ="accent"
+            [disableRipple]="false"
+    >
+      Next
+    </button>
+    <button mat-raised-button
+            class="example-delete-tab-button"
+            [disabled]="selected.value === 0"
+            (click)="previous()"
+            color ="green"
+    >
+     Back
+    </button>
+  </mat-tab>
+</mat-tab-group>
+
+
+
 
 </div>
-<div class="col-for-page padding-responsive">
 
-  Here we show details of{{markerid}}
-  <div class= "image-container"> 
-  <img [src]="'https://firebasestorage.googleapis.com/v0/b/forest-data-representation.appspot.com/o/forest-yearly-pictures%2Fabbottabad%2F0.png?alt=media&token=89a1a654-7d2e-4a1a-a186-300320b4b842'">
-</div>
-</div>
 </div>

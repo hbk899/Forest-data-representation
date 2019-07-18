@@ -21,14 +21,14 @@ import { from } from 'rxjs';
  export const routes: Routes = [
 
   // { path: '', component: ArifMainComponent },
-  { path :'' , component:AMainComponent   },
+  { path :'publications' , component:AMainComponent   },
   { path: 'about', component: AboutComponent  },
 
   {path:'signin',component:SigninComponent },
   {path:'articleNew',component:ArticleNewComponent},
   {path:'profile',component:ProfileComponent},
   {path:'myarticles', component:ArticlesMyComponent},
-  {path:'mymap' , component:MyMapComponent},
+  {path:'' , component:MyMapComponent},
   {path:'markerdetail' , component:MarkerdetailComponent},
   {path:'markerdetail/:id' , component:MarkerdetailComponent}
 

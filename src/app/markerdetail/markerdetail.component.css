@@ -2,3 +2,27 @@
 
     padding: 10px
 }
+.detail-card{
+   min-height: 70%;
+   height: auto;
+   margin: auto;
+}
+
+
+.header-less-tabs.mat-tab-group .mat-tab-header {
+ display: none;
+  }
+ 
+  @media (max-width: 600px) {
+    .module {
+      font-size: 10px;
+      max-height: 75px; }
+  }
+  @media (max-width: 1024px) {
+    .grid {
+      margin: 0;
+    }
+    .module {
+      min-width: 60px;
+    }
+  }

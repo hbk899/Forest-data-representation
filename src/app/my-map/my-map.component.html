@@ -1,48 +1,58 @@
 
 <mat-sidenav-container class="example-container" >
-  <mat-sidenav #mapsidenav  >
-    <p><button mat-button (click)="mapsidenav.toggle()">Toggle</button></p>
+  <mat-sidenav id="mapsidenav" #mapsidenav>
+    <p><button mat-button (click)="mapsidenav.toggle()">&nbsp;&nbsp;Close</button></p>
     <h3>{{sidenavdata.label}} </h3>
     
-     <a mat-button routerLink="/markerdetail/{{sidenavdata.label}}" >
-                        <i class="far fa-tree"></i> &nbsp;&nbsp; Show Details</a>
+     <a mat-button routerLink="/markerdetail/{{sidenavdata.id}}" >
+                        <i class="fas fa-tree"></i> &nbsp;&nbsp; Show Details</a>
   
     
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content class="map-wrapper"  id="wrapper" #wrapper>
+   
     <agm-map 
-
+   id="AgmMap"
+   (idle)="idle()"
+      (centerChange)="centerChange($event)"
   [latitude]="lat"
   [longitude]="lng"
   [zoom]="zoom"
   [disableDefaultUI]="false"
   [zoomControl]="true"
-  (mapClick)="mapClicked($event)">
-<p>pARA</p>
+  (mapClick)="mapClicked($event)"
+  (zoomChange)="handlezoomchange($event)">
+    #AgmMap
   <agm-marker 
-      *ngFor="let m of markers; let i = index"
-      (markerClick)="mapsidenav.toggle();clickedMarker(m.label, i)"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
+      *ngFor="let m of mapdata; let i = index"
+      (markerClick)="mapsidenav.toggle();clickedMarker(m)"
+      [latitude]="m.polygon[0].lat -0.001"
+      [longitude]="m.polygon[0].lng -0.001"
       [label]=""
       [markerDraggable]="m.draggable"
-      (dragEnd)="markerDragEnd(m, $event)">
-      
-   <!--<agm-info-window>
-      <strong>InfoWindow content</strong>
-    </agm-info-window> -->
+      (dragEnd)="markerDragEnd(m, $event)"
+      [iconUrl]="'http://maps.google.com/mapfiles/ms/icons/green-dot.png'"
+      (mouseOver)="mouseOver($event)">
+  
+  >
+   
     
   </agm-marker>
   
-  <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
-      [radius]="5000"
-      [fillColor]="'red'"
-      [circleDraggable]="false"
-      [editable]="true">
-  </agm-circle>
+  
+  
+
+
+  
+ <agm-polygon     *ngFor="let m of mapdata; let i = index"  [paths]="m.polygon"  (polyClick)="onPolyclick(m);mapsidenav.toggle()"  [visible]="showpoly" [fillColor]="'#98FB98'">
+       
+   
+</agm-polygon>
 
 </agm-map>
+
+
   </mat-sidenav-content>
 </mat-sidenav-container>
 

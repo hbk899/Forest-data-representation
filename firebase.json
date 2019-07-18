@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "earthchange-pk",
     "public": "public",
     "ignore": [
       "firebase.json",
