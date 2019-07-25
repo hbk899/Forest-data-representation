@@ -1,12 +1,74 @@
 
   .map-wrapper {
-    height: 600px;}
+   
+    
+  
+  }
+  .map {
+    display: flex;
+    flex-direction: column;
+  }
 agm-map {
    
-    width: 100%;  /* This is really important*/
-    height: 100%;
-    
+  height: 200px;
+  width: 100%;
+  flex-grow: 2;
   }
   #mapsidenav{
     width: 30%
+  }
+
+
+  .menu{
+    max-width: auto;
+    margin-top: 20px;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  
+  nav a{
+    width: 100%;
+    text-decoration: none;
+    background-color: #eee;
+  }
+ nav p{
+    width: 100%;
+    text-decoration: none;
+    background-color: rgb(233, 247, 234);
+    text-align: justify;
+    padding: 2px;
+  }
+
+  
+  nav a{
+    text-align: left;
+    font-size: 120%;
+    padding: 5px 10px;
+
+  }
+  /* nav *:visited, a:link {
+  } */
+  
+  nav a.active {
+    color: #039be5;
+  }
+  
+  html, body, .map {
+      height: 100%;
+      width: 100%;
+      margin: 0px;
+  }
+
+  .map {
+      position: relative;
+  }
+
+  .gm-style, .sebm-google-map-container-inner {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 100;
   }

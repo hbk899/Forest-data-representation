@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 //import { ServiceWorkerModule } from '@angular/service-worker';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppRoutingModule } from './app-routing.module';
 import { DemoMaterialModule } from './material.module';
 import { CovalentTextEditorModule } from '@covalent/text-editor';
@@ -18,11 +18,10 @@ import {AngularFirestore } from '../../node_modules/angularfire2/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AMainComponent } from './a-main/a-main.component';
 import { AboutComponent } from './about/about.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { HeaderComponent } from './header/header.component';
-import { ArticleNewComponent } from './article-new/article-new.component';
+
+
 import { SigninComponent } from './signin/signin.component';
-import { ProfileComponent } from './profile/profile.component';
+
 
 //import { AuthGuard } from "./_services/auth.gaurd";
 
@@ -39,7 +38,7 @@ import { RouterModule } from '@angular/router';
 import { QRCodeModule } from 'angularx-qrcode';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { AgmCoreModule } from '@agm/core';
-import { ArticlesMyComponent } from './articles-my/articles-my.component';
+
 import { MyMapComponent } from './my-map/my-map.component';
 import { MarkerdetailComponent } from './markerdetail/markerdetail.component';
 
@@ -50,12 +49,11 @@ import { MarkerdetailComponent } from './markerdetail/markerdetail.component';
     AppComponent,
     AMainComponent,
     AboutComponent,
-    SideBarComponent,
-    HeaderComponent,
-    ArticleNewComponent,
+  
+   
     SigninComponent,
-    ProfileComponent,
-    ArticlesMyComponent,
+   
+    
     MyMapComponent,
     MarkerdetailComponent,
     

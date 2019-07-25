@@ -290,7 +290,9 @@ nav *.active {
 }
 
 
-
+.empty{
+	min-height:200px;
+}
 
 /*
 Copyright 2017-2018 Google Inc. All Rights Reserved.

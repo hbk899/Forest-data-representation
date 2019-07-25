@@ -72,7 +72,7 @@ nav a.active {
 .app-toolbar {
   position: sticky;
   position: -webkit-sticky; /* For macOS/iOS Safari */
-  bottom:  0; /* Sets the sticky toolbar to be on top */
+  top:  0; /* Sets the sticky toolbar to be on top */
   z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 }
 
@@ -92,4 +92,9 @@ nav a.active {
     background-color: #CFD8DC;
   }
     
+}
+.footer{
+  position: sticky;
+  position: -webkit-sticky; 
+  bottom: 0;
 }

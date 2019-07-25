@@ -10,11 +10,11 @@ import { RouterModule, Routes } from '@angular/router';
 // import { ArifMainComponent } from './arif-main/arif-main.component';
 import { AMainComponent } from './a-main/a-main.component';
 import { AboutComponent } from './about/about.component';
-import {HeaderComponent } from './header/header.component';
+
 import {SigninComponent} from './signin/signin.component';
-import {ProfileComponent} from './profile/profile.component';
-import {ArticleNewComponent} from './article-new/article-new.component';
-import {ArticlesMyComponent} from './articles-my/articles-my.component';
+
+
+
 import {MyMapComponent} from './my-map/my-map.component';
 import{MarkerdetailComponent} from './markerdetail/markerdetail.component';
 import { from } from 'rxjs';
@@ -25,9 +25,8 @@ import { from } from 'rxjs';
   { path: 'about', component: AboutComponent  },
 
   {path:'signin',component:SigninComponent },
-  {path:'articleNew',component:ArticleNewComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'myarticles', component:ArticlesMyComponent},
+ 
+
   {path:'' , component:MyMapComponent},
   {path:'markerdetail' , component:MarkerdetailComponent},
   {path:'markerdetail/:id' , component:MarkerdetailComponent}

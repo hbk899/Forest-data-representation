@@ -8,7 +8,20 @@
    margin: auto;
 }
 
+.my-container {
+  border: 1px solid green;
+  margin :15px, 2% ;
+  
+}
+.my-row {
+  border: 3px solid rgb(190, 34, 34);
+  
+  background:#efff;
+}
 
+.my-col {
+  border: 3px dotted blue;
+}
 .header-less-tabs.mat-tab-group .mat-tab-header {
  display: none;
   }
@@ -26,3 +39,12 @@
       min-width: 60px;
     }
   }
+
+
+  .myblock {
+    background-color: green;
+    width: 300px;
+    height: 250px;
+    border-radius: 5px;
+    margin: 5rem;
+}

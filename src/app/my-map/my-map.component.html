@@ -1,58 +1,60 @@
-
-<mat-sidenav-container class="example-container" >
+<mat-sidenav-container>
   <mat-sidenav id="mapsidenav" #mapsidenav>
-    <p><button mat-button (click)="mapsidenav.toggle()">&nbsp;&nbsp;Close</button></p>
-    <h3>{{sidenavdata.label}} </h3>
-    
-     <a mat-button routerLink="/markerdetail/{{sidenavdata.id}}" >
-                        <i class="fas fa-tree"></i> &nbsp;&nbsp; Show Details</a>
-  
-    
+    <nav class="menu">
+      <a mat-button (click)="mapsidenav.toggle()">Close &nbsp;&nbsp;</a>
+      <h3>{{sidenavdata.label}} </h3>
+      <p>{{sidenavdata.Disp}}</p>
+      <a mat-button routerLink="/markerdetail/{{sidenavdata.id}}">
+        <i class="fas fa-tree"></i> &nbsp;&nbsp; Click for more Details</a>
+
+    </nav>
   </mat-sidenav>
 
-  <mat-sidenav-content class="map-wrapper"  id="wrapper" #wrapper>
+  <mat-sidenav-content >
    
-    <agm-map 
-   id="AgmMap"
-   (idle)="idle()"
-      (centerChange)="centerChange($event)"
-  [latitude]="lat"
-  [longitude]="lng"
-  [zoom]="zoom"
-  [disableDefaultUI]="false"
-  [zoomControl]="true"
-  (mapClick)="mapClicked($event)"
-  (zoomChange)="handlezoomchange($event)">
-    #AgmMap
-  <agm-marker 
-      *ngFor="let m of mapdata; let i = index"
-      (markerClick)="mapsidenav.toggle();clickedMarker(m)"
-      [latitude]="m.polygon[0].lat -0.001"
-      [longitude]="m.polygon[0].lng -0.001"
-      [label]=""
-      [markerDraggable]="m.draggable"
-      (dragEnd)="markerDragEnd(m, $event)"
-      [iconUrl]="'http://maps.google.com/mapfiles/ms/icons/green-dot.png'"
-      (mouseOver)="mouseOver($event)">
-  
-  >
-   
+      <div class="map col-md-10" >
+
+      
+        <agm-map  id="AgmMap" (idle)="idle()" (centerChange)="centerChange($event)"
+          [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="true"
+          (mapClick)="mapClicked($event)" (zoomChange)="handlezoomchange($event)"
+          style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"
+          >
+          #AgmMap
+          <agm-marker [visible]="anusdata" *ngFor="let m of mapdata; let i = index"
+            (markerClick)="mapsidenav.toggle();clickedMarker(m)" [latitude]="m.polygon[0].lat -0.001"
+            [longitude]="m.polygon[0].lng -0.001" [label]="" [markerDraggable]="m.draggable"
+            (dragEnd)="markerDragEnd(m, $event)" [iconUrl]="'http://maps.google.com/mapfiles/ms/icons/green-dot.png'"
+            (mouseOver)="mouseOver($event)">
+
+            >
+
+
+          </agm-marker>
+
+
+
+
+
+
+
+
+          <agm-polygon *ngFor="let m of mapdata; let i = index" [paths]="m.polygon"
+            (polyClick)="onPolyclick(m);mapsidenav.toggle()" [visible]="showpoly&& anusdata" [fillColor]="'#98FB98'">
+
+
+          </agm-polygon>
+
+          <agm-data-layer [geoJson]="geoJsonObject" (layerClick)="clicked($event)" [style]="styleFunc">
+          </agm-data-layer>
+
+        </agm-map>
+
+
+
+      </div>
+
+
     
-  </agm-marker>
-  
-  
-  
-
-
-  
- <agm-polygon     *ngFor="let m of mapdata; let i = index"  [paths]="m.polygon"  (polyClick)="onPolyclick(m);mapsidenav.toggle()"  [visible]="showpoly" [fillColor]="'#98FB98'">
-       
-   
-</agm-polygon>
-
-</agm-map>
-
-
   </mat-sidenav-content>
 </mat-sidenav-container>
-
