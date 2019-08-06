@@ -25,11 +25,12 @@ import { from } from 'rxjs';
   { path: 'about', component: AboutComponent  },
 
   {path:'signin',component:SigninComponent },
- 
+
 
   {path:'' , component:MyMapComponent},
   {path:'markerdetail' , component:MarkerdetailComponent},
-  {path:'markerdetail/:id' , component:MarkerdetailComponent}
+  {path:'markerdetail/:type/:id' , component:MarkerdetailComponent},
+
 
 ];
 

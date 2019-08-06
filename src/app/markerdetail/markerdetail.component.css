@@ -1,3 +1,4 @@
+
 .image-container{
 
     padding: 10px
@@ -9,23 +10,25 @@
 }
 
 .my-container {
-  border: 1px solid green;
-  margin :15px, 2% ;
-  
+  border: 0px solid green;
+  margin :20px;
+  padding-left:2% ;
+  background: white;
+
 }
 .my-row {
-  border: 3px solid rgb(190, 34, 34);
-  
-  background:#efff;
+  border: 0px solid rgb(190, 34, 34);
+
+
 }
 
 .my-col {
-  border: 3px dotted blue;
+  border: 0px dotted blue;
 }
 .header-less-tabs.mat-tab-group .mat-tab-header {
  display: none;
   }
- 
+
   @media (max-width: 600px) {
     .module {
       font-size: 10px;
@@ -47,4 +50,12 @@
     height: 250px;
     border-radius: 5px;
     margin: 5rem;
+}
+
+.card{
+
+  background-image:"https://gph.is/2gESFHh"
+}
+.m-3{
+margin :5px;
 }
