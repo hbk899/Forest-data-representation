@@ -1,20 +1,15 @@
-<div style="width: 70%;" class="container my-container m-5 mx-auto" *ngIf="forest">
+<div style="min-height:90vh; width: 70%; " class="container my-container m-5 mx-auto" *ngIf="forest">
   <div class="row  my-row">
 
 
 
-    <div class="pic-container  col-7 my-col">
+    <div class="col-7 my-col">
       <mat-tab-group class="header-less-tabs center-horizontal detail-card" [selectedIndex]="selected.value"
         (selectedIndexChange)="selected.setValue($event)">
         <mat-tab *ngFor="let tab of imagearray; let index = index">
           <!-- [label]="((index <= imagearray.length-2) ? +'2013' +index : 'Change Image')"> -->
-          <mat-card class="task-card ">
-            <mat-card-header>
-              <div mat-card-avatar>
-              </div>
+          <mat-card >
 
-
-            </mat-card-header>
             <mat-spinner class="centered-horizontal" diameter="40" *ngIf="loading"><iframe src="https://giphy.com/embed/swhRkVYLJDrCE" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/google-icon-loading-swhRkVYLJDrCE">via GIPHY</a></p></mat-spinner>
             <img mat-card-image  class="card" id="anidiv" src={{imagearray[index]}} *ngIf="!loading" alt="Photo of ">
 
@@ -59,36 +54,26 @@
             Next
           </button>
 
-             <button mat-raised-button
+             <!-- <button mat-raised-button
                color="accent" [disableRipple]="false" >
               Animate
-            </button>
+            </button> -->
           </mat-card>
        </div>
 
-    <div class="col-md-12 col-sm-12 my-col">detail here
+    <!-- <div class="col-md-12 col-sm-12 my-col">
 
       <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
+
         <img mat-card-image [@.disabled]="isDisabled"  src={{imagesrc}} alt="Photo of a Shiba Inu" [@fade]="state"
           (@fade.done)="onAnimationDone($event)" onClick="animat()">
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
+
         <mat-card-actions>
           <button mat-button (click)="animat()">animate</button>
           <button mat-button>SHARE</button>
         </mat-card-actions>
       </mat-card>
-    </div>
+    </div> -->
 
   </div>
 
@@ -104,13 +89,3 @@
 
 
 
-<div class="container my-container m-3 "  style="width: 80%;">
-
-<div class="row">
-
-<div class="col-4 my-col">
-detail here
-</div>
-
-</div>
-</div>

@@ -23,6 +23,33 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/_services/animation.ts":
+/*!****************************************!*\
+  !*** ./src/app/_services/animation.ts ***!
+  \****************************************/
+/*! exports provided: fade, imagechange */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fade", function() { return fade; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "imagechange", function() { return imagechange; });
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+
+var fade = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])("fade", [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])("active", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 1 })),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])("inactive", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0 })),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])("* <=> *", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(2000)])
+]);
+var imagechange = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])("fade", [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])("inactive", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0 })),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])("active", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0 })),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])("* <=> *", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(2000)])
+]);
+
+
+/***/ }),
+
 /***/ "./src/app/_services/auth.service.ts":
 /*!*******************************************!*\
   !*** ./src/app/_services/auth.service.ts ***!
@@ -501,28 +528,6 @@ can be found in the LICENSE file at http://angular.io/license
 
 /***/ }),
 
-/***/ "./src/app/_services/upload.ts":
-/*!*************************************!*\
-  !*** ./src/app/_services/upload.ts ***!
-  \*************************************/
-/*! exports provided: Upload */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Upload", function() { return Upload; });
-var Upload = /** @class */ (function () {
-    function Upload(file) {
-        this.createdAt = new Date();
-        this.file = file;
-    }
-    return Upload;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/a-main/a-main.component.css":
 /*!*********************************************!*\
   !*** ./src/app/a-main/a-main.component.css ***!
@@ -541,7 +546,7 @@ module.exports = ".title{\r\nfont-size: 4ch;\r\nfont-family: Verdana, Geneva, Ta
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <app-header></app-header> -->\r\n<div class=\"row\">\r\n\r\n  <div class=\"col-for-sides \" ></div>\r\n\r\n  <div class=\"col-for-page padding-responsive\">\r\n\r\n    <div *ngIf=\"isLoggedIn\">WELCOME</div>\r\n    \r\n    <div *ngIf=\"!isLoggedIn\">not logged in</div>\r\n\r\n\r\n    <div class=\"list-item-wrapper\" *ngFor=\"let article of articlesList\">\r\n      <mat-card class=\"task-card\">\r\n        <mat-card-header>\r\n          <div mat-card-avatar>\r\n\r\n            <!-- <cl-image public-id=\"{{task.dpImgUrl}}\">\r\n              <cl-transformation width=\"40\" height=\"40\" gravity=\"face\" radius=\"100\" crop=\"thumb\">\r\n              </cl-transformation>\r\n\r\n\r\n\r\n            </cl-image> -->\r\n\r\n\r\n          </div>\r\n          <mat-card-title><h1><markdown [data]=\"article.title \"></markdown></h1></mat-card-title>\r\n                        <mat-card-subtitle>      <markdown [data]=\"article.author\"></markdown>\r\n                               </mat-card-subtitle>\r\n        </mat-card-header>\r\n        <mat-card-content>\r\n        \r\n            <markdown   [data]=\"article.description\" ></markdown>\r\n           \r\n         <mat-tab-group headerPosition=\"above\">\r\n  <mat-tab ><ng-template mat-tab-label><i class=\"material-icons\">\r\n    add_comment\r\n</i> </ng-template> New Solutions\r\n\r\n <div class=\"list-item-wrapper\" *ngFor=\"let comment of article.comments \">\r\n            <markdown [data] =\"comment\">\r\n            \r\n            \r\n            </markdown>\r\n\r\n            </div>\r\n            \r\n\r\n </mat-tab>\r\n\r\n\r\n<mat-tab ><ng-template mat-tab-label><i class=\"material-icons\">\r\n    check\r\n</i> </ng-template> Existing Solutions </mat-tab>\r\n\r\n\r\n\r\n</mat-tab-group>\r\n        </mat-card-content>\r\n         <mat-card-actions>\r\n    <button mat-button (click)=\"liking(article.id)\" >LIKE</button>\r\n    <button mat-button>SHARE</button>\r\n  </mat-card-actions>\r\n      </mat-card>\r\n\r\n\r\n    </div>\r\n\r\n\r\n    <mat-paginator [length]=\"noOfAssignments\"\r\n              [pageSize]=\"pageSize\"\r\n              [pageSizeOptions]=\"pageSizeOptions\"\r\n              >\r\n              <!-- (page)=\"pageEvent = $event\" -->\r\n    </mat-paginator>\r\n\r\n\r\n\r\n\r\n\r\n  </div>\r\n\r\n \r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n \r\n  \r\n   "
+module.exports = "<!-- <app-header></app-header> -->\r\n\r\n<div class=\"container\" style=\"min-height:90vh;\">\r\n  <div class=\"mx-auto\" style=\"text-align: center ;\"><h1>Coming Soon</h1></div>\r\n\r\n\r\n\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -650,7 +655,7 @@ var AMainComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "agm-map{\r\n\r\n  height: 100vh;\r\n}\r\n"
 
 /***/ }),
 
@@ -661,7 +666,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<!-- <td-text-editor [value]=\"Some Text\" [options]=\"options\" #textEditor></td-text-editor> -->\n\n\n<p>\n  about \n</p>\n"
+module.exports = "\n<!-- <td-text-editor [value]=\"Some Text\" [options]=\"options\" #textEditor></td-text-editor> -->\n\n\n <div class=\"container\" style=\"height: 100vh;\"></div>\n\n\n"
 
 /***/ }),
 
@@ -726,11 +731,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _a_main_a_main_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./a-main/a-main.component */ "./src/app/a-main/a-main.component.ts");
 /* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
 /* harmony import */ var _signin_signin_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./signin/signin.component */ "./src/app/signin/signin.component.ts");
-/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/profile/profile.component.ts");
-/* harmony import */ var _article_new_article_new_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./article-new/article-new.component */ "./src/app/article-new/article-new.component.ts");
-/* harmony import */ var _articles_my_articles_my_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./articles-my/articles-my.component */ "./src/app/articles-my/articles-my.component.ts");
-/* harmony import */ var _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./my-map/my-map.component */ "./src/app/my-map/my-map.component.ts");
-/* harmony import */ var _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./markerdetail/markerdetail.component */ "./src/app/markerdetail/markerdetail.component.ts");
+/* harmony import */ var _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./my-map/my-map.component */ "./src/app/my-map/my-map.component.ts");
+/* harmony import */ var _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./markerdetail/markerdetail.component */ "./src/app/markerdetail/markerdetail.component.ts");
 /*
 * This file decides the navigation of the app.
 */
@@ -748,20 +750,14 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
-
-
 var routes = [
     // { path: '', component: ArifMainComponent },
     { path: 'publications', component: _a_main_a_main_component__WEBPACK_IMPORTED_MODULE_2__["AMainComponent"] },
     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_3__["AboutComponent"] },
     { path: 'signin', component: _signin_signin_component__WEBPACK_IMPORTED_MODULE_4__["SigninComponent"] },
-    { path: 'articleNew', component: _article_new_article_new_component__WEBPACK_IMPORTED_MODULE_6__["ArticleNewComponent"] },
-    { path: 'profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_5__["ProfileComponent"] },
-    { path: 'myarticles', component: _articles_my_articles_my_component__WEBPACK_IMPORTED_MODULE_7__["ArticlesMyComponent"] },
-    { path: '', component: _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_8__["MyMapComponent"] },
-    { path: 'markerdetail', component: _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_9__["MarkerdetailComponent"] },
-    { path: 'markerdetail/:id', component: _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_9__["MarkerdetailComponent"] }
+    { path: '', component: _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_5__["MyMapComponent"] },
+    { path: 'markerdetail', component: _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_6__["MarkerdetailComponent"] },
+    { path: 'markerdetail/:type/:id', component: _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_6__["MarkerdetailComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -791,7 +787,7 @@ can be found in the LICENSE file at http://angular.io/license
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "example-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n\r\n.example-is-mobile .example-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\n\r\n.basic-container {\r\n  padding: 30px;\r\n}\r\n\r\n.toolbar{\r\n   overflow: hidden;\r\n   padding: 20px 10px;\r\n   text-decoration: none\r\n }\r\n\r\n.toolbar a{\r\n  padding: 12px;\r\n  text-decoration: none;\r\n }\r\n\r\n.toolbar a.active {\r\n  background-color: dodgerblue;\r\n  color: white;\r\n}\r\n\r\n#snav{\r\n  height: -webkit-fit-content;\r\n  height: -moz-fit-content;\r\n  height: fit-content;\r\n}\r\n\r\n.menu{\r\n  max-width: 250px;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n  overflow: hidden;\r\n}\r\n\r\nnav a,p{\r\n  width: 100%;\r\n  text-decoration: none;\r\n  background-color: #eee;\r\n}\r\n\r\nnav a{\r\n  text-align: left;\r\n  font-size: 120%;\r\n  padding: 5px 10px;\r\n}\r\n\r\n/* nav *:visited, a:link {\r\n} */\r\n\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n\r\n.section-heading{\r\n  text-align: center;\r\n  padding: 0px 10px;\r\n  font-weight: bold;\r\n  \r\n}\r\n\r\n.app-toolbar {\r\n  position: sticky;\r\n  position: -webkit-sticky; /* For macOS/iOS Safari */\r\n  bottom:  0; /* Sets the sticky toolbar to be on top */\r\n  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */\r\n}\r\n\r\n.pwa{\r\n  padding: 5px;\r\n  font-size: 80%;\r\n  text-align: center;\r\n  position: relative;\r\n  bottom: 0;\r\n}\r\n\r\n@media only screen and (min-width: 600px) {\r\n    /* For tablets: */\r\n\r\n    nav a:hover {\r\n    color: #314947;\r\n    background-color: #CFD8DC;\r\n  }\r\n    \r\n}"
+module.exports = "example-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n\r\n.example-is-mobile .example-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\n\r\n.basic-container {\r\n  padding: 30px;\r\n}\r\n\r\n.toolbar{\r\n   overflow: hidden;\r\n   padding: 20px 10px;\r\n   text-decoration: none\r\n }\r\n\r\n.toolbar a{\r\n  padding: 12px;\r\n  text-decoration: none;\r\n }\r\n\r\n.toolbar a.active {\r\n  background-color: dodgerblue;\r\n  color: white;\r\n}\r\n\r\n#snav{\r\n  height: -webkit-fit-content;\r\n  height: -moz-fit-content;\r\n  height: fit-content;\r\n}\r\n\r\n.menu{\r\n  max-width: 250px;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n  overflow: hidden;\r\n}\r\n\r\nnav a,p{\r\n  width: 100%;\r\n  text-decoration: none;\r\n  background-color: #eee;\r\n}\r\n\r\nnav a{\r\n  text-align: left;\r\n  font-size: 120%;\r\n  padding: 5px 10px;\r\n}\r\n\r\n/* nav *:visited, a:link {\r\n} */\r\n\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n\r\n.section-heading{\r\n  text-align: center;\r\n  padding: 0px 10px;\r\n  font-weight: bold;\r\n  \r\n}\r\n\r\n.app-toolbar {\r\n  position: sticky;\r\n  position: -webkit-sticky; /* For macOS/iOS Safari */\r\n  top:  0; /* Sets the sticky toolbar to be on top */\r\n  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */\r\n}\r\n\r\n.pwa{\r\n  padding: 5px;\r\n  font-size: 80%;\r\n  text-align: center;\r\n  position: relative;\r\n  bottom: 0;\r\n}\r\n\r\n@media only screen and (min-width: 600px) {\r\n    /* For tablets: */\r\n\r\n    nav a:hover {\r\n    color: #314947;\r\n    background-color: #CFD8DC;\r\n  }\r\n    \r\n}\r\n\r\n.footer{\r\n  position: sticky;\r\n  position: -webkit-sticky; \r\n  bottom: 0;\r\n}"
 
 /***/ }),
 
@@ -802,7 +798,7 @@ module.exports = "example-container {\r\n  display: flex;\r\n  flex-direction: c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<html>\r\n<head>\r\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n</head>\r\n\r\n<body *ngIf=\"!loading\">\r\n\r\n\r\n  <!--this is toolbar-->\r\n\t<mat-toolbar class=\"toolbar\" color=\"primary\"   (window:resize)=\"refresh()\">\r\n  \r\n    <span class=\"header-padding\"></span>\r\n    <a  *ngIf=\"isMobile\"  (click)=\"snav.toggle()\"><mat-icon>menu</mat-icon></a>\r\n    \r\n    <!--<a  routerLink=\"/signin\" *ngIf=\"!loggedIn\">Sign In</a>-->\r\n    <a   *ngIf=\"!isMobile\"   routerLink=\"/\">Our Map</a>\r\n    <a   *ngIf=\"!isMobile\" routerLink=\"/publications\">My Publications  </a>\r\n\r\n    <a     *ngIf=\"!isMobile\" routerLink=\"/about\"  >About</a>\r\n    \r\n    \r\n    <span style=\"flex: 1 0 auto;\"></span>\r\n   <a routerLink=\"/profile\" *ngIf=\"loggedIn\"><i class=\"fas fa-user \"></i>{{ \" \"+username}} </a>\r\n   \r\n    \r\n\r\n    <span class=\"header-padding\"></span>\r\n</mat-toolbar>\r\n\r\n\r\n\t<mat-sidenav-container class=\"nav-container\" autosize >\r\n  \t<mat-sidenav #snav [(mode)]=\"sideNavMode\"  [(opened)]=\"sideNavOpened\" fullscreen > \r\n\t\t <nav class=\"menu\">\r\n          <a mat-button routerLink=\"/\" (click)=\"snav.toggle()\"> <i class=\"fas fa-map-marker-alt\"></i>&nbsp;&nbsp;Our Map</a>\r\n          <a mat-button routerLink=\"/publications\" (click)=\"snav.toggle()\"> <i class=\"fas fa-edit\"></i>&nbsp;&nbsp;Publications</a>\r\n          <p class=\"section-heading\" >Personal</p>\r\n           <a mat-button  routerLink=\"/about\"  (click)=\"snav.toggle()\"><i class=\"fas fa-user \"></i>&nbsp;&nbsp; About Us</a>\r\n           <a mat-button    (click)=\"snav.toggle()\"><i class=\"far fa-comment-dots\"></i>&nbsp;&nbsp; Feedback</a>\r\n          \r\n  </nav>\r\n\t\r\n\t</mat-sidenav>\r\n\t\t<mat-sidenav-content  >\r\n\t\t\t\t<router-outlet ></router-outlet>\r\n                \r\n\t\t</mat-sidenav-content>\r\n\t</mat-sidenav-container>\r\n\r\n\r\n\r\n    <mat-toolbar class=\"toolbar app-toolbar\" color=\"primary\"   (window:resize)=\"refresh()\"  *ngIf=\"!loading\">\r\n  \r\n    <span class=\"header-padding\"></span>\r\n    \r\n    \r\n    <!--<a  routerLink=\"/signin\" *ngIf=\"!loggedIn\">Sign In</a>-->\r\n    \r\n    <a    >Footer 1</a>\r\n    <a     >Footer 2</a>\r\n    <a        >Footer 3</a>\r\n    \r\n    \r\n    <span style=\"flex: 1 0 auto;\"></span>\r\n   \r\n</mat-toolbar>\r\n\r\n\r\n</body>\r\n\r\n\r\n</html>\r\n\r\n\r\n<!--\r\nCopyright 2017-2018 Google Inc. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at http://angular.io/license\r\n-->\r\n"
+module.exports = "<html>\r\n\r\n<head>\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0 ,height=device-height\">\r\n</head>\r\n\r\n<body *ngIf=\"!loading\">\r\n\r\n\r\n  <!--this is toolbar-->\r\n  <mat-toolbar class=\"toolbar app-toolbar\" color=\"primary\" (window:resize)=\"refresh()\">\r\n    <span class=\"header-padding\"></span>\r\n    <a *ngIf=\"isMobile\" (click)=\"snav.toggle()\">\r\n      <mat-icon>menu</mat-icon>\r\n    </a>\r\n    <!--<a  routerLink=\"/signin\" *ngIf=\"!loggedIn\">Sign In</a>-->\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/\">Our Map</a>\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/publications\">Our Publications </a>\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/about\">About</a>\r\n    <span style=\"flex: 1 0 auto;\"></span>\r\n    <a routerLink=\"/profile\" *ngIf=\"loggedIn\"><i class=\"fas fa-user \"></i>{{ \" \"+username}} </a>\r\n    <span class=\"header-padding\"></span>\r\n  </mat-toolbar>\r\n  <mat-sidenav-container class=\"nav-container\" autosize>\r\n    <mat-sidenav #snav [(mode)]=\"sideNavMode\" [(opened)]=\"sideNavOpened\" fullscreen>\r\n      <nav class=\"menu\">\r\n        <a mat-button routerLink=\"/\" (click)=\"snav.toggle()\"> <i class=\"fas fa-map-marker-alt\"></i>&nbsp;&nbsp;Our\r\n          Map</a>\r\n        <a mat-button routerLink=\"/publications\" (click)=\"snav.toggle()\"> <i\r\n            class=\"fas fa-edit\"></i>&nbsp;&nbsp;Publications</a>\r\n        <p class=\"section-heading\">Personal</p>\r\n        <a mat-button routerLink=\"/about\" (click)=\"snav.toggle()\"><i class=\"fas fa-user \"></i>&nbsp;&nbsp; About Us</a>\r\n        <a mat-button (click)=\"snav.toggle()\"><i class=\"far fa-comment-dots\"></i>&nbsp;&nbsp; Feedback</a>\r\n      </nav>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <router-outlet></router-outlet>\r\n\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>\r\n<footer>\r\n  <mat-toolbar class=\"toolbar footer\" color=\"primary\" (window:resize)=\"refresh()\" *ngIf=\"!loading\">\r\n\r\n    <!-- <span class=\"header-padding\"></span>\r\n\r\n    <a>Footer 1</a>\r\n    <a>Footer 2</a>\r\n    <a>Footer 3</a>\r\n    <span style=\"flex: 1 0 auto;\"></span> -->\r\n\r\n\r\n    <!-- Footer -->\r\n\r\n\r\n\r\n\r\n  <!-- Footer Links -->\r\n\r\n  <!-- Copyright -->\r\n  <div   class=\"mx-auto\" style=\"text-align: center ;\">© 2018 Copyright:\r\n    <a href=\"https://tukl.seecs.nust.edu.pk/\"> TUKL SEECS</a>\r\n  </div>\r\n  <!-- Copyright -->\r\n\r\n\r\n<!-- Footer -->\r\n  </mat-toolbar>\r\n</footer>\r\n</body>\r\n\r\n</html>\r\n\r\n\r\n<!--\r\nCopyright 2017-2018 Google Inc. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at http://angular.io/license\r\n-->\r\n"
 
 /***/ }),
 
@@ -941,8 +937,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _material_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./material.module */ "./src/app/material.module.ts");
 /* harmony import */ var _covalent_text_editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @covalent/text-editor */ "./node_modules/@covalent/text-editor/esm5/covalent-text-editor.js");
@@ -956,27 +952,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/storage/index.js");
 /* harmony import */ var _a_main_a_main_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./a-main/a-main.component */ "./src/app/a-main/a-main.component.ts");
 /* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
-/* harmony import */ var _side_bar_side_bar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./side-bar/side-bar.component */ "./src/app/side-bar/side-bar.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _article_new_article_new_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./article-new/article-new.component */ "./src/app/article-new/article-new.component.ts");
-/* harmony import */ var _signin_signin_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./signin/signin.component */ "./src/app/signin/signin.component.ts");
-/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/profile/profile.component.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./_services/auth.service */ "./src/app/_services/auth.service.ts");
-/* harmony import */ var _services_notify_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./_services/notify.service */ "./src/app/_services/notify.service.ts");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_25__);
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(angularfire2_auth__WEBPACK_IMPORTED_MODULE_26__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var angularx_qrcode__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! angularx-qrcode */ "./node_modules/angularx-qrcode/dist/index.js");
-/* harmony import */ var ngx_image_cropper__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ngx-image-cropper */ "./node_modules/ngx-image-cropper/ngx-image-cropper.es5.js");
-/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
-/* harmony import */ var _articles_my_articles_my_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./articles-my/articles-my.component */ "./src/app/articles-my/articles-my.component.ts");
-/* harmony import */ var _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./my-map/my-map.component */ "./src/app/my-map/my-map.component.ts");
-/* harmony import */ var _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./markerdetail/markerdetail.component */ "./src/app/markerdetail/markerdetail.component.ts");
+/* harmony import */ var _signin_signin_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./signin/signin.component */ "./src/app/signin/signin.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./_services/auth.service */ "./src/app/_services/auth.service.ts");
+/* harmony import */ var _services_notify_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./_services/notify.service */ "./src/app/_services/notify.service.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(angularfire2_auth__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angularx_qrcode__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! angularx-qrcode */ "./node_modules/angularx-qrcode/dist/index.js");
+/* harmony import */ var ngx_image_cropper__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ngx-image-cropper */ "./node_modules/ngx-image-cropper/ngx-image-cropper.es5.js");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./my-map/my-map.component */ "./src/app/my-map/my-map.component.ts");
+/* harmony import */ var _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./markerdetail/markerdetail.component */ "./src/app/markerdetail/markerdetail.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -986,10 +977,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 //import { ServiceWorkerModule } from '@angular/service-worker';
-
-
-
-
 
 
 
@@ -1020,520 +1007,49 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
                 _a_main_a_main_component__WEBPACK_IMPORTED_MODULE_13__["AMainComponent"],
                 _about_about_component__WEBPACK_IMPORTED_MODULE_14__["AboutComponent"],
-                _side_bar_side_bar_component__WEBPACK_IMPORTED_MODULE_15__["SideBarComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_16__["HeaderComponent"],
-                _article_new_article_new_component__WEBPACK_IMPORTED_MODULE_17__["ArticleNewComponent"],
-                _signin_signin_component__WEBPACK_IMPORTED_MODULE_18__["SigninComponent"],
-                _profile_profile_component__WEBPACK_IMPORTED_MODULE_19__["ProfileComponent"],
-                _articles_my_articles_my_component__WEBPACK_IMPORTED_MODULE_31__["ArticlesMyComponent"],
-                _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_32__["MyMapComponent"],
-                _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_33__["MarkerdetailComponent"],
+                _signin_signin_component__WEBPACK_IMPORTED_MODULE_15__["SigninComponent"],
+                _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_27__["MyMapComponent"],
+                _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_28__["MarkerdetailComponent"],
             ],
             imports: [
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ReactiveFormsModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_16__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_16__["ReactiveFormsModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
                 _material_module__WEBPACK_IMPORTED_MODULE_5__["DemoMaterialModule"],
-                ngx_image_cropper__WEBPACK_IMPORTED_MODULE_29__["ImageCropperModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_27__["RouterModule"].forRoot([]),
-                angularfire2_auth__WEBPACK_IMPORTED_MODULE_26__["AngularFireAuthModule"],
+                ngx_image_cropper__WEBPACK_IMPORTED_MODULE_25__["ImageCropperModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouterModule"].forRoot([]),
+                angularfire2_auth__WEBPACK_IMPORTED_MODULE_22__["AngularFireAuthModule"],
                 _node_modules_angularfire2_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"].enablePersistence(),
                 ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkdownModule"].forRoot(),
                 _covalent_text_editor__WEBPACK_IMPORTED_MODULE_6__["CovalentTextEditorModule"],
-                _angular_http__WEBPACK_IMPORTED_MODULE_22__["HttpModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_21__["HttpClientModule"],
+                _angular_http__WEBPACK_IMPORTED_MODULE_18__["HttpModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_17__["HttpClientModule"],
                 angularfire2__WEBPACK_IMPORTED_MODULE_7__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].firebase),
                 angularfire2__WEBPACK_IMPORTED_MODULE_7__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].firebase, 'my-app-name'),
                 _node_modules_angularfire2_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"].enablePersistence(),
-                angularfire2_auth__WEBPACK_IMPORTED_MODULE_26__["AngularFireAuthModule"],
+                angularfire2_auth__WEBPACK_IMPORTED_MODULE_22__["AngularFireAuthModule"],
                 _angular_fire_storage__WEBPACK_IMPORTED_MODULE_12__["AngularFireStorageModule"],
-                angularx_qrcode__WEBPACK_IMPORTED_MODULE_28__["QRCodeModule"],
-                _agm_core__WEBPACK_IMPORTED_MODULE_30__["AgmCoreModule"].forRoot({
+                angularx_qrcode__WEBPACK_IMPORTED_MODULE_24__["QRCodeModule"],
+                _agm_core__WEBPACK_IMPORTED_MODULE_26__["AgmCoreModule"].forRoot({
                     apiKey: 'AIzaSyBt4GWgutgc8URi0kHpyRT_S720WGONf8s'
                 }),
             ],
-            providers: [_services_main_service__WEBPACK_IMPORTED_MODULE_10__["MainService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_23__["AuthService"], _services_notify_service__WEBPACK_IMPORTED_MODULE_24__["NotifyService"], angularfire2_auth__WEBPACK_IMPORTED_MODULE_26__["AngularFireAuthModule"], _node_modules_angularfire2_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestore"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
+            providers: [_services_main_service__WEBPACK_IMPORTED_MODULE_10__["MainService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_19__["AuthService"], _services_notify_service__WEBPACK_IMPORTED_MODULE_20__["NotifyService"], angularfire2_auth__WEBPACK_IMPORTED_MODULE_22__["AngularFireAuthModule"], _node_modules_angularfire2_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestore"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/article-new/article-new.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/article-new/article-new.component.css ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/* @import '~dropzone/dist/min/dropzone.min.css'; */\r\n.form {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n.form > * {\r\n    width: 100%;\r\n  }\r\n.textarea-description{\r\n    height: 100px;\r\n  }\r\n.demo-chip-list {\r\n    width: 100%;\r\n  }\r\n  "
-
-/***/ }),
-
-/***/ "./src/app/article-new/article-new.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/article-new/article-new.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\r\n\r\n<div class=\"row\">\r\n<div *ngIf=\"!isLoggedIn\"> Please signin to write article <a routerLink=\"../signin\" *ngIf=\"!isLoggedIn\">Sign In</a></div>\r\n<div *ngIf=\"isLoggedIn\">\r\n  <div class=\"col-for-sides\" *ngIf=\"isLoggedIn\"></div>\r\n\r\n  <div class=\"col-for-page padding-responsive\">\r\n\r\n\r\n    <div class=\"form\">\r\n\r\n        <h2>Post a article.</h2>\r\n\r\n          <mat-form-field>\r\n            <input matInput  [(ngModel)]=\"title\"  placeholder=\"Title\">\r\n          </mat-form-field>\r\n          <mat-form-field>\r\n            <input matInput  [(ngModel)]=\"author\"  placeholder=\"Author\">\r\n          </mat-form-field>\r\n\r\n\r\n\r\n\r\n<!--\r\n          <mat-form-field>\r\n            <mat-select placeholder=\"Select\">\r\n              <mat-option value=\"option\">Option</mat-option>\r\n            </mat-select>\r\n          </mat-form-field> -->\r\n\r\n          <form>\r\n            <mat-form-field class=\"demo-chip-list\">\r\n              <mat-chip-list #chipList>\r\n                  <mat-chip\r\n                  *ngFor=\"let tag of tags\"\r\n                  [selectable]=\"selectable\"\r\n                  [removable]=\"removable\"\r\n                  (removed)=\"remove(tag)\">\r\n                  {{tag}}\r\n                  <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\r\n                </mat-chip>\r\n                <input\r\n                  placeholder=\"Tags...\"\r\n                  #tagInput\r\n                  [formControl]=\"tagCtrl\"\r\n                  [matAutocomplete]=\"auto\"\r\n                  [matChipInputFor]=\"chipList\"\r\n                  [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\r\n                  [matChipInputAddOnBlur]=\"addOnBlur\"\r\n                  (matChipInputTokenEnd)=\"add($event)\"\r\n                />\r\n              </mat-chip-list>\r\n              <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"selected($event)\">\r\n                <mat-option *ngFor=\"let tag of filteredTags | async\" [value]=\"tag\">\r\n                  {{ tag }}\r\n                </mat-option>\r\n              </mat-autocomplete>\r\n            </mat-form-field>\r\n          </form>\r\n\r\n          <td-text-editor id=\"editor\" [(ngModel)]=\"description\"  [options]=\"simplemdeoptions\"></td-text-editor>\r\n\r\n\r\n\r\n          <!-- <mat-form-field class=\"form-element\" appearance=\"outline\">\r\n            <mat-label>External Attachment</mat-label>\r\n            <input matInput [(ngModel)]=\"externalAttachment\" type=\"text\" placeholder=\"Paste link\" >\r\n            <mat-icon matSuffix>link</mat-icon>\r\n            <mat-hint>You may usse Google Drive, Dropbox etc.<a href=\"https://files.fm/\" target=\"blank\">File.fm</a> is nice tool.\r\n              <br>Use <a href=\"https://stackblitz.com\" target=\"blank\">Stak blitz</a> and <a href=\"https://codepen.io\" target=\"blank\">Code pen</a> etc for code purposes\r\n\r\n\r\n            </mat-hint>\r\n\r\n          </mat-form-field> -->\r\n          <br>\r\n\r\n            <div class=\"button-row\">\r\n              <button class=\"centered-horizontal\" mat-raised-button color=\"accent\" *ngIf=\"!loading\" (click)=\"posting()\" >Submit</button>\r\n              <mat-spinner class=\"centered-horizontal\"   diameter=\"30\"  *ngIf=\"loading\"></mat-spinner>\r\n            </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n  </div>\r\n \r\n\r\n\r\n\r\n</div>\r\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/article-new/article-new.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/article-new/article-new.component.ts ***!
-  \******************************************************/
-/*! exports provided: ArticleNewComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArticleNewComponent", function() { return ArticleNewComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/keycodes */ "./node_modules/@angular/cdk/esm5/keycodes.es5.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_services/main.service */ "./src/app/_services/main.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_services/auth.service */ "./src/app/_services/auth.service.ts");
-/* harmony import */ var _services_profile_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../_services/profile.service */ "./src/app/_services/profile.service.ts");
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _schema_user__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../schema/user */ "./src/app/schema/user.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-var ArticleNewComponent = /** @class */ (function () {
-    function ArticleNewComponent(mainService, db, authService, router, route, profileService) {
-        this.mainService = mainService;
-        this.db = db;
-        this.authService = authService;
-        this.router = router;
-        this.route = route;
-        this.profileService = profileService;
-        this.title = "";
-        this.article_data = "";
-        this.description = "";
-        this.user = new _schema_user__WEBPACK_IMPORTED_MODULE_8__["default"];
-        this.author = "";
-        this.visible = true;
-        this.selectable = true;
-        this.removable = true;
-        this.addOnBlur = false;
-        this.separatorKeysCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["COMMA"]];
-        this.tagCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]();
-        this.tags = [];
-        this.allTags = [
-            'computers',
-            'writing',
-            'accounting',
-            'angular',
-            'android-developement',
-            'ios-developement0',
-            'maths',
-            'physics',
-            'digital-logic-design',
-            'health',
-            'medical-sciences'
-        ];
-        this.simplemdeoptions = {
-            // autofocus: true,
-            autoDownloadFontAwesome: true,
-            autosave: {
-                enabled: true,
-                uniqueId: "MyUniqueID",
-                delay: 1000,
-            },
-            // element: document.getElementById("MyID"),
-            forceSync: true,
-            // hideIcons: ["guide", "heading"],
-            // indentWithTabs: false,
-            // initialValue: "Hello world!",
-            // lineWrapping: false,
-            placeholder: "Description here...",
-            promptURLs: true,
-            // renderingConfig: {
-            // 	singleLineBreaks: false,
-            // 	codeSyntaxHighlighting: true,
-            // },
-            shortcuts: {
-                drawTable: "Cmd-Alt-T"
-            },
-            showIcons: ["code"],
-            // spellChecker: true,
-            styleSelectedText: false,
-            tabSize: 4,
-        };
-    }
-    ArticleNewComponent.prototype.add = function (event) {
-        var input = event.input;
-        var value = event.value;
-        // Add our tag
-        if ((value || '').trim()) {
-            this.tags.push(value.trim());
-        }
-        // Reset the input value
-        if (input) {
-            input.value = '';
-        }
-        this.tagCtrl.setValue(null);
-    };
-    ArticleNewComponent.prototype.remove = function (tag) {
-        var index = this.tags.indexOf(tag);
-        if (index >= 0) {
-            this.tags.splice(index, 1);
-        }
-    };
-    ArticleNewComponent.prototype.filter = function (name) {
-        return this.allTags.filter(function (tag) {
-            return tag.toLowerCase().indexOf(name.toLowerCase()) === 0;
-        });
-    };
-    ArticleNewComponent.prototype.selected = function (event) {
-        this.tags.push(event.option.viewValue);
-        this.tagInput.nativeElement.value = '';
-        this.tagCtrl.setValue(null);
-    };
-    ArticleNewComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.authService.getLoggedInUpdates().subscribe(function (user) {
-            if (user == null || user == undefined) {
-                _this.isLoggedIn = false;
-            }
-            else {
-                _this.isLoggedIn = true;
-            }
-        });
-        this.userId = this.route.snapshot.paramMap.get('id');
-        this.authService.getCurrentUserUpdates().subscribe(function (user) {
-            if (!user) {
-                return;
-            }
-            if (user.id === _this.userId || !_this.userId) {
-                _this.me = true;
-            }
-            else {
-                _this.getUser();
-                _this.me = false;
-            }
-            _this.user = user;
-        });
-    };
-    ArticleNewComponent.prototype.getUser = function () {
-        var _this = this;
-        this.loading = true;
-        this.profileService.getById(this.userId)
-            .then(function (user) {
-            _this.user = user;
-            //  console.log(user);
-            _this.loading = false;
-        })
-            .catch(function (err) {
-            _this.loading = false;
-        });
-    };
-    ArticleNewComponent.prototype.posting = function () {
-        var _this = this;
-        var addDoc = this.db.collection('articles').add({
-            title: this.title,
-            description: this.description,
-            tags: this.tags,
-            author: this.user.displayName,
-            authorId: this.user.id
-        }).then(function (ref) {
-            console.log('Added document with ID: ', ref.id);
-            var addid = _this.db.collection('articles').doc(ref.id).update({
-                id: ref.id
-            });
-            console.log(' the first tag is ', _this.tags[0]);
-            console.log('the id of author is', _this.user.id);
-            _this.router.navigateByUrl('/');
-        });
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('tagInput'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
-    ], ArticleNewComponent.prototype, "tagInput", void 0);
-    ArticleNewComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-article-new',
-            template: __webpack_require__(/*! ./article-new.component.html */ "./src/app/article-new/article-new.component.html"),
-            styles: [__webpack_require__(/*! ./article-new.component.css */ "./src/app/article-new/article-new.component.css")]
-        }),
-        __metadata("design:paramtypes", [_services_main_service__WEBPACK_IMPORTED_MODULE_3__["MainService"],
-            angularfire2_firestore__WEBPACK_IMPORTED_MODULE_7__["AngularFirestore"],
-            _services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"],
-            _services_profile_service__WEBPACK_IMPORTED_MODULE_6__["ProfileService"]])
-    ], ArticleNewComponent);
-    return ArticleNewComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/articles-my/articles-my.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/articles-my/articles-my.component.css ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/articles-my/articles-my.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/articles-my/articles-my.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n<div class=\"row\">\n\n  <div class=\"col-for-sides\" ></div>\n\n  <div class=\"col-for-page padding-responsive\">\n\n    <div *ngIf=\"isLoggedIn\">WELCOME</div>\n    \n    <div *ngIf=\"!isLoggedIn\">not logged in</div>\n\n\n    <div class=\"list-item-wrapper\" *ngFor=\"let article of articlesList\">\n      <mat-card class=\"task-card\">\n        <mat-card-header>\n          <div mat-card-avatar>\n\n            <!-- <cl-image public-id=\"{{task.dpImgUrl}}\">\n              <cl-transformation width=\"40\" height=\"40\" gravity=\"face\" radius=\"100\" crop=\"thumb\">\n              </cl-transformation>\n\n\n\n            </cl-image> -->\n\n\n          </div>\n          <mat-card-title><h1><markdown [data]=\"article.title \"></markdown></h1> by<markdown [data]=\"article.author\"></markdown></mat-card-title>\n        </mat-card-header>\n        <mat-card-content>\n            <markdown   [data]=\"article.description\" ></markdown>\n          \n\n        </mat-card-content>\n      </mat-card>\n\n\n    </div>\n\n\n    <mat-paginator [length]=\"noOfAssignments\"\n              [pageSize]=\"pageSize\"\n              [pageSizeOptions]=\"pageSizeOptions\"\n              >\n              <!-- (page)=\"pageEvent = $event\" -->\n    </mat-paginator>\n\n\n\n\n\n  </div>\n\n \n\n\n\n\n</div>\n\n\n \n  \n   "
-
-/***/ }),
-
-/***/ "./src/app/articles-my/articles-my.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/articles-my/articles-my.component.ts ***!
-  \******************************************************/
-/*! exports provided: ArticlesMyComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArticlesMyComponent", function() { return ArticlesMyComponent; });
-/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_services/main.service */ "./src/app/_services/main.service.ts");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_services/auth.service */ "./src/app/_services/auth.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_notify_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../_services/notify.service */ "./src/app/_services/notify.service.ts");
-/* harmony import */ var _services_profile_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_services/profile.service */ "./src/app/_services/profile.service.ts");
-/* harmony import */ var _schema_user__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../schema/user */ "./src/app/schema/user.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var ArticlesMyComponent = /** @class */ (function () {
-    function ArticlesMyComponent(authService, route, profileService, notify, mainService) {
-        this.authService = authService;
-        this.route = route;
-        this.profileService = profileService;
-        this.notify = notify;
-        this.mainService = mainService;
-        this.loading = false;
-        this.user = new _schema_user__WEBPACK_IMPORTED_MODULE_6__["default"];
-        this.tasks = [];
-        this.pageSizeOptions = [20];
-        this.isLoggedIn = false;
-    }
-    ArticlesMyComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.userId = this.route.snapshot.paramMap.get('id');
-        this.authService.getCurrentUserUpdates().subscribe(function (user) {
-            if (!user) {
-                return;
-            }
-            if (user.id === _this.userId || !_this.userId) {
-                _this.me = true;
-            }
-            else {
-                _this.getUser();
-                _this.me = false;
-            }
-            _this.user = user;
-        });
-        this.mainService.getUserCollection("articles", this.userId)
-            .then(function (list) {
-            _this.articlesList = list;
-            //  console.log(this.articlesList);
-            return "got documents from database";
-        })
-            .then(function (temp) {
-            console.log(temp);
-        })
-            .catch(function (err) {
-            console.log(err);
-        });
-        this.authService.getLoggedInUpdates().subscribe(function (user) {
-            if (user == null || user == undefined) {
-                _this.isLoggedIn = false;
-            }
-            else {
-                _this.isLoggedIn = true;
-            }
-        });
-    };
-    ArticlesMyComponent.prototype.getUser = function () {
-        var _this = this;
-        this.loading = true;
-        this.profileService.getById(this.userId)
-            .then(function (user) {
-            _this.user = user;
-            //  console.log(user);
-            _this.loading = false;
-        })
-            .catch(function (err) {
-            _this.loading = false;
-        });
-    };
-    ArticlesMyComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
-            selector: 'app-articles-my',
-            template: __webpack_require__(/*! ./articles-my.component.html */ "./src/app/articles-my/articles-my.component.html"),
-            styles: [__webpack_require__(/*! ./articles-my.component.css */ "./src/app/articles-my/articles-my.component.css")]
-        }),
-        __metadata("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
-            _services_profile_service__WEBPACK_IMPORTED_MODULE_5__["ProfileService"],
-            _services_notify_service__WEBPACK_IMPORTED_MODULE_4__["NotifyService"],
-            _services_main_service__WEBPACK_IMPORTED_MODULE_0__["MainService"]])
-    ], ArticlesMyComponent);
-    return ArticlesMyComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/header/header.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/header/header.component.css ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/* Style the header with a grey background and some padding */\r\n\r\n\r\n\r\n\r\n.topnav {\r\n  overflow: hidden;\r\n  background-color: black;\r\n  color: white;\r\n  margin-bottom: 100px;\r\n}\r\n\r\n\r\n\r\n\r\n.topnav a {\r\n  float: left;\r\n  display: block;\r\n  color: white;\r\n  text-align: center;\r\n  padding: 14px 16px;\r\n  text-decoration: none;\r\n  font-size: 17px;\r\n}\r\n\r\n\r\n\r\n\r\n.topnav a:hover {\r\n  background-color: #ddd;\r\n  color: black;\r\n}\r\n\r\n\r\n\r\n\r\n.topnav a.active {\r\n  background-color: rgb(119, 228, 177);\r\n  color: white;\r\n}\r\n\r\n\r\n\r\n\r\n.topnav .search-container {\r\n  float: right;\r\n}\r\n\r\n\r\n\r\n\r\n.topnav input[type=text] {\r\n  padding: 6px;\r\n  margin-top: 8px;\r\n  font-size: 17px;\r\n  border: none;\r\n}\r\n\r\n\r\n\r\n\r\n.topnav .search-container button {\r\n  float: right;\r\n  padding: 6px 10px;\r\n  margin-top: 8px;\r\n  margin-right: 16px;\r\n  background: #ddd;\r\n  font-size: 17px;\r\n  border: none;\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n\r\n\r\n.topnav .search-container button:hover {\r\n  background: #ccc;\r\n}\r\n\r\n\r\n\r\n\r\n@media screen and (max-width: 600px) {\r\n  .topnav .search-container {\r\n    float: none;\r\n  }\r\n  .topnav a, .topnav input[type=text], .topnav .search-container button {\r\n    float: none;\r\n    display: block;\r\n    text-align: left;\r\n    width: 100%;\r\n    margin: 0;\r\n    padding: 14px;\r\n  }\r\n  .topnav input[type=text] {\r\n    border: 1px solid #ccc;  \r\n  }\r\n}"
-
-/***/ }),
-
-/***/ "./src/app/header/header.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/header/header.component.html ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<head><!-- Global site tag (gtag.js) - Google Analytics -->\r\n  <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-127453011-1\"></script>\r\n  <script>\r\n    window.dataLayer = window.dataLayer || [];\r\n    function gtag(){dataLayer.push(arguments);}\r\n    gtag('js', new Date());\r\n  \r\n    gtag('config', 'UA-127453011-1');\r\n  </script>\r\n  </head>\r\n<!-- <div class=\"topnav\">\r\n  <a class=\"active\" routerLink=\"\">Home</a>\r\n  \r\n  \r\n  \r\n  <div class=\"search-container\">\r\n    <form action=\"/action_page.php\">\r\n      <input type=\"text\" placeholder=\"Search..\" name=\"search\">\r\n      <button ><i class=\"fa fa-search\"></i></button>\r\n    </form>\r\n  </div>\r\n</div>  -->\r\n\r\n\r\n"
-
-/***/ }),
-
-/***/ "./src/app/header/header.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/header/header.component.ts ***!
-  \********************************************/
-/*! exports provided: HeaderComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderComponent", function() { return HeaderComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_services/main.service */ "./src/app/_services/main.service.ts");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_services/auth.service */ "./src/app/_services/auth.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent(mainService, authService) {
-        this.mainService = mainService;
-        this.authService = authService;
-        this.isLoggedIn = false;
-    }
-    HeaderComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.authService.getLoggedInUpdates().subscribe(function (user) {
-            if (user == null || user == undefined) {
-                _this.isLoggedIn = false;
-            }
-            else {
-                _this.isLoggedIn = true;
-            }
-        });
-    };
-    HeaderComponent.prototype.logout = function () {
-        this.authService.logOut();
-    };
-    HeaderComponent.prototype.refresh = function () {
-        var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth || e.clientWidth || g.clientWidth, y = w.innerHeight || e.clientHeight || g.clientHeight;
-        console.log(x);
-        if (x > 600) {
-            this.isMobile = false;
-            this.sideNavOpened = false;
-            this.sideNavMode = 'over';
-        }
-        else {
-            this.sideNavMode = 'over';
-            this.sideNavOpened = false;
-            this.isMobile = true;
-        }
-    };
-    HeaderComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-header',
-            template: __webpack_require__(/*! ./header.component.html */ "./src/app/header/header.component.html"),
-            styles: [__webpack_require__(/*! ./header.component.css */ "./src/app/header/header.component.css")]
-        }),
-        __metadata("design:paramtypes", [_services_main_service__WEBPACK_IMPORTED_MODULE_1__["MainService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
-    ], HeaderComponent);
-    return HeaderComponent;
 }());
 
 
@@ -1547,7 +1063,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".image-container{\r\n\r\n    padding: 10px\r\n}\r\n.detail-card{\r\n   min-height: 70%;\r\n   height: auto;\r\n   margin: auto;\r\n}\r\n.header-less-tabs.mat-tab-group .mat-tab-header {\r\n display: none;\r\n  }\r\n@media (max-width: 600px) {\r\n    .module {\r\n      font-size: 10px;\r\n      max-height: 75px; }\r\n  }\r\n@media (max-width: 1024px) {\r\n    .grid {\r\n      margin: 0;\r\n    }\r\n    .module {\r\n      min-width: 60px;\r\n    }\r\n  }"
+module.exports = "\r\n.image-container{\r\n\r\n    padding: 10px\r\n}\r\n.detail-card{\r\n   min-height: 70%;\r\n   height: auto;\r\n   margin: auto;\r\n}\r\n.my-container {\r\n  border: 0px solid green;\r\n  margin :20px;\r\n  padding-left:2% ;\r\n  background: white;\r\n\r\n}\r\n.my-row {\r\n  border: 0px solid rgb(190, 34, 34);\r\n\r\n\r\n}\r\n.my-col {\r\n  border: 0px dotted blue;\r\n}\r\n.header-less-tabs.mat-tab-group .mat-tab-header {\r\n display: none;\r\n  }\r\n@media (max-width: 600px) {\r\n    .module {\r\n      font-size: 10px;\r\n      max-height: 75px; }\r\n  }\r\n@media (max-width: 1024px) {\r\n    .grid {\r\n      margin: 0;\r\n    }\r\n    .module {\r\n      min-width: 60px;\r\n    }\r\n  }\r\n.myblock {\r\n    background-color: green;\r\n    width: 300px;\r\n    height: 250px;\r\n    border-radius: 5px;\r\n    margin: 5rem;\r\n}\r\n.card{\r\n border: 0px;\r\n  background-image:\"https://gph.is/2gESFHh\"\r\n}\r\n.m-3{\r\nmargin :5px;\r\n}\r\n\r\n"
 
 /***/ }),
 
@@ -1558,7 +1074,7 @@ module.exports = ".image-container{\r\n\r\n    padding: 10px\r\n}\r\n.detail-car
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row \">\n<div class=\"col-for-sides\" ></div>\n<div class=\" col-for-page padding-responsive \"style='min-height:800px'>\n\n\n\n<mat-tab-group class=\"header-less-tabs center-horizontal detail-card\" [selectedIndex]=\"selected.value\"\n               (selectedIndexChange)=\"selected.setValue($event)\"\n               \n              \n               >\n  <mat-tab *ngFor=\"let tab of imagearray; let index = index\" [label]=\"((index <= imagearray.length-2) ? +'2013' +index : 'Change Image')\">\n   <mat-card class=\"task-card \"  >\n        <mat-card-header>\n          <div mat-card-avatar>\n        </div>\n          <mat-card-title><h1>Forest Data Representation for {{markerdetail.label}}</h1></mat-card-title>\n                       \n                              \n        </mat-card-header>\n        <mat-spinner class=\"centered-horizontal\" diameter=\"40\" *ngIf=\"loading\"></mat-spinner>\n         <img mat-card-image id=\"anidiv\" src={{imagearray[index]}} *ngIf=\"!loading\" alt=\"Photo of \">\n\n        \n        <mat-card-content>\n        \n     \n     <h1>{{showyear}}\n</h1>\n\n \n        </mat-card-content>\n         <mat-card-actions>\n         \n \n  </mat-card-actions>\n      </mat-card>\n\n    <button mat-raised-button\n            class=\"example-delete-tab-button\"\n            [disabled]=\"selected.value === imagearray.length -1\"\n            (click)=\"next()\"\n            color =\"accent\"\n            [disableRipple]=\"false\"\n    >\n      Next\n    </button>\n    <button mat-raised-button\n            class=\"example-delete-tab-button\"\n            [disabled]=\"selected.value === 0\"\n            (click)=\"previous()\"\n            color =\"green\"\n    >\n     Back\n    </button>\n  </mat-tab>\n</mat-tab-group>\n\n\n\n\n</div>\n\n</div>"
+module.exports = "<div style=\"min-height:90vh; width: 70%; \" class=\"container my-container m-5 mx-auto\" *ngIf=\"forest\">\n  <div class=\"row  my-row\">\n\n\n\n    <div class=\"col-7 my-col\">\n      <mat-tab-group class=\"header-less-tabs center-horizontal detail-card\" [selectedIndex]=\"selected.value\"\n        (selectedIndexChange)=\"selected.setValue($event)\">\n        <mat-tab *ngFor=\"let tab of imagearray; let index = index\">\n          <!-- [label]=\"((index <= imagearray.length-2) ? +'2013' +index : 'Change Image')\"> -->\n          <mat-card >\n\n            <mat-spinner class=\"centered-horizontal\" diameter=\"40\" *ngIf=\"loading\"><iframe src=\"https://giphy.com/embed/swhRkVYLJDrCE\" width=\"480\" height=\"270\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe><p><a href=\"https://giphy.com/gifs/google-icon-loading-swhRkVYLJDrCE\">via GIPHY</a></p></mat-spinner>\n            <img mat-card-image  class=\"card\" id=\"anidiv\" src={{imagearray[index]}} *ngIf=\"!loading\" alt=\"Photo of \">\n\n\n\n          </mat-card>\n\n        </mat-tab>\n      </mat-tab-group>\n\n\n\n\n\n\n    </div>\n    <div class=\"col-5 my-col\">\n\n\n\n\n        <mat-card>\n            <mat-card-content>\n                <h1 style=\"align-self:centre\">{{markerdetail.label}}</h1>\n\n                <p>{{markerdetail.Disp}}</p>\n\n              <h1>{{showyear}}\n              </h1>\n\n\n            </mat-card-content>\n\n\n\n            <button mat-raised-button class=\"example-delete-tab-button\" [disabled]=\"selected.value === 0\"\n              (click)=\"previous()\" color=\"green\">\n              Back\n            </button>\n            <button mat-raised-button class=\"example-delete-tab-button\" [disabled]=\"selected.value === imagearray.length -1\"\n            (click)=\"next()\" color=\"accent\" [disableRipple]=\"false\">\n            Next\n          </button>\n\n             <!-- <button mat-raised-button\n               color=\"accent\" [disableRipple]=\"false\" >\n              Animate\n            </button> -->\n          </mat-card>\n       </div>\n\n    <!-- <div class=\"col-md-12 col-sm-12 my-col\">\n\n      <mat-card class=\"example-card\">\n\n        <img mat-card-image [@.disabled]=\"isDisabled\"  src={{imagesrc}} alt=\"Photo of a Shiba Inu\" [@fade]=\"state\"\n          (@fade.done)=\"onAnimationDone($event)\" onClick=\"animat()\">\n\n        <mat-card-actions>\n          <button mat-button (click)=\"animat()\">animate</button>\n          <button mat-button>SHARE</button>\n        </mat-card-actions>\n      </mat-card>\n    </div> -->\n\n  </div>\n\n\n\n\n\n\n\n\n\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -1578,6 +1094,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_services/main.service */ "./src/app/_services/main.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _services_animation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_services/animation */ "./src/app/_services/animation.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1592,75 +1109,146 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MarkerdetailComponent = /** @class */ (function () {
     function MarkerdetailComponent(mainService, db, route) {
         this.mainService = mainService;
         this.db = db;
         this.route = route;
+        this.title = "angularanimation01";
+        this.toState = "state1";
         this.imagearray = [];
+        this.forest = true;
         this.loading = false;
         this.startyear = 2013;
-        this.showyear = 2013;
         this.animateclicked = false;
         this.markerdetail = {};
-        this.tabs = ['First', 'Second', 'Third'];
+        this.times = 5;
+        this.state = "active";
+        this.counter = 0;
+        this.checked = true;
+        this.isDisabled = true;
+        this.tabs = ["First", "Second", "Third"];
         this.selected = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](0);
     }
     MarkerdetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.loading = true;
-        this.markerid = this.route.snapshot.paramMap.get('id');
+        this.markerid = this.route.snapshot.paramMap.get("id");
+        this.type = this.route.snapshot.paramMap.get("type");
         console.log(" got label from other page ", this.markerid);
-        this.mainService.getByIdAndCollection('marker', this.markerid)
-            .then(function (list) {
-            console.log("here we are");
-            _this.markerdetail = list;
-            _this.imagearray = list.picurl;
-            _this.imagesrc = list.picurl[0];
-            console.log(_this.markerdetail.lat);
-            _this.loading = false;
-        })
-            .catch(function (err) {
-            console.log(err);
-        });
+        if (this.type == "0") {
+            this.anusdata = true;
+            this.mainService
+                .getByIdAndCollection("marker", this.markerid)
+                .then(function (list) {
+                console.log("here we are");
+                _this.markerdetail = list;
+                _this.imagearray = list.picurl;
+                _this.imagesrc = list.picurl[0];
+                _this.years = list.imgyear;
+                _this.showyear = list.imgyear[0];
+                console.log(_this.markerdetail.lat);
+                _this.loading = false;
+            })
+                .catch(function (err) {
+                console.log(err);
+            });
+        }
+        if (this.type == "1") {
+            this.anusdata = false;
+            this.mainService
+                .getByIdAndCollection("marker2", this.markerid)
+                .then(function (list) {
+                console.log("here we are");
+                _this.markerdetail = list;
+                _this.imagearray = list.picurl;
+                _this.imagesrc = list.picurl[0];
+                _this.years = list.imgyear;
+                _this.showyear = list.imgyear[0];
+                console.log(_this.markerdetail.lat);
+                _this.loading = false;
+            })
+                .catch(function (err) {
+                console.log(err);
+            });
+        }
     };
     MarkerdetailComponent.prototype.next = function () {
+        this.loading = true;
         var temp = this.selected.value;
         temp++;
-        this.showyear = this.startyear + temp;
-        temp = (temp) % this.imagearray.length;
+        this.showyear = this.years[temp];
+        temp = temp % this.imagearray.length;
         this.selected.setValue(temp);
         console.log("current index", temp);
         this.loading = false;
     };
     MarkerdetailComponent.prototype.previous = function () {
+        this.loading = true;
         var temp = this.selected.value;
         temp--;
-        this.showyear = this.startyear + temp;
-        temp = (temp) % this.imagearray.length;
+        this.showyear = this.years[temp];
+        temp = temp % this.imagearray.length;
         this.selected.setValue(temp);
         console.log("current index", temp);
         this.loading = false;
     };
-    MarkerdetailComponent.prototype.addTab = function (selectAfterAdding) {
-        this.tabs.push('New');
-        if (selectAfterAdding) {
-            this.selected.setValue(this.tabs.length - 1);
+    // onAnimationDone($event) {
+    //   // call this function at the end of the previous animation.
+    //   // run it as many time as defined
+    //   if (this.counter < this.times) {
+    //     this.state = this.state === 'active' ? 'inactive' : 'active';
+    //     this.imagesrc=this.imagearray[this.counter]
+    //     this.counter++;
+    //   }
+    // }
+    MarkerdetailComponent.prototype.onAnimationDone = function ($event) {
+        console.log("onanimation done called");
+        if (this.counter < this.times) {
+            this.toggleImg();
+        }
+        this.toggleState();
+    };
+    MarkerdetailComponent.prototype.toggleImg = function () {
+        console.log("imagetoggle called");
+        if (this.counter < this.times) {
+            this.imagesrc = this.imagearray[this.counter];
+            this.counter++;
         }
     };
-    MarkerdetailComponent.prototype.removeTab = function (index) {
-        this.tabs.splice(index, 1);
+    MarkerdetailComponent.prototype.toggleState = function () {
+        console.log("togllestate called");
+        if (this.counter < this.times) {
+            this.state = this.state === "active" ? "inactive" : "active";
+        }
+        else
+            this.state = "active";
+    };
+    MarkerdetailComponent.prototype.animat = function () {
+        console.log("animat called");
+        // this.enableAnimation = true;
+        this.isDisabled = false;
+        this.counter = 0;
+        this.toggleState();
+        this.counter = 0;
+        this.imagesrc = this.imagearray[this.counter];
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"])('anidiv'),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])(),
+        __metadata("design:type", Object)
+    ], MarkerdetailComponent.prototype, "currentState", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"])("anidiv"),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"])
     ], MarkerdetailComponent.prototype, "animatediv", void 0);
     MarkerdetailComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-            selector: 'app-markerdetail',
+            selector: "app-markerdetail",
             template: __webpack_require__(/*! ./markerdetail.component.html */ "./src/app/markerdetail/markerdetail.component.html"),
             styles: [__webpack_require__(/*! ./markerdetail.component.css */ "./src/app/markerdetail/markerdetail.component.css")],
-            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None,
+            animations: [_services_animation__WEBPACK_IMPORTED_MODULE_5__["fade"]]
         }),
         __metadata("design:paramtypes", [_services_main_service__WEBPACK_IMPORTED_MODULE_2__["MainService"],
             angularfire2_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"],
@@ -1753,7 +1341,7 @@ var DemoMaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n  .map-wrapper {\r\n    height: 600px;}\r\nagm-map {\r\n   \r\n    width: 100%;  /* This is really important*/\r\n    height: 100%;\r\n    \r\n  }\r\n#mapsidenav{\r\n    width: 30%\r\n  }\r\n"
+module.exports = "\r\n\r\nagm-map{\r\n  height: 90vh;\r\n\r\n  }\r\n  #mapsidenav{\r\n    width: 30%\r\n  }\r\n  .menu{\r\n    max-width: auto;\r\n    margin-top: 20px;\r\n    text-align: center;\r\n    overflow: hidden;\r\n  }\r\n  nav a{\r\n    width: 100%;\r\n    text-decoration: none;\r\n    background-color: #eee;\r\n  }\r\n  nav p{\r\n    width: 100%;\r\n    text-decoration: none;\r\n    background-color: rgb(233, 247, 234);\r\n    text-align: justify;\r\n    padding: 2px;\r\n  }\r\n  nav a{\r\n    text-align: left;\r\n    font-size: 120%;\r\n    padding: 5px 10px;\r\n\r\n  }\r\n  /* nav *:visited, a:link {\r\n  } */\r\n  nav a.active {\r\n    color: #039be5;\r\n  }\r\n\r\n"
 
 /***/ }),
 
@@ -1764,7 +1352,7 @@ module.exports = "\r\n  .map-wrapper {\r\n    height: 600px;}\r\nagm-map {\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<mat-sidenav-container class=\"example-container\" >\r\n  <mat-sidenav id=\"mapsidenav\" #mapsidenav>\r\n    <p><button mat-button (click)=\"mapsidenav.toggle()\">&nbsp;&nbsp;Close</button></p>\r\n    <h3>{{sidenavdata.label}} </h3>\r\n    \r\n     <a mat-button routerLink=\"/markerdetail/{{sidenavdata.id}}\" >\r\n                        <i class=\"fas fa-tree\"></i> &nbsp;&nbsp; Show Details</a>\r\n  \r\n    \r\n  </mat-sidenav>\r\n\r\n  <mat-sidenav-content class=\"map-wrapper\"  id=\"wrapper\" #wrapper>\r\n   \r\n    <agm-map \r\n   id=\"AgmMap\"\r\n   (idle)=\"idle()\"\r\n      (centerChange)=\"centerChange($event)\"\r\n  [latitude]=\"lat\"\r\n  [longitude]=\"lng\"\r\n  [zoom]=\"zoom\"\r\n  [disableDefaultUI]=\"false\"\r\n  [zoomControl]=\"true\"\r\n  (mapClick)=\"mapClicked($event)\"\r\n  (zoomChange)=\"handlezoomchange($event)\">\r\n    #AgmMap\r\n  <agm-marker \r\n      *ngFor=\"let m of mapdata; let i = index\"\r\n      (markerClick)=\"mapsidenav.toggle();clickedMarker(m)\"\r\n      [latitude]=\"m.polygon[0].lat -0.001\"\r\n      [longitude]=\"m.polygon[0].lng -0.001\"\r\n      [label]=\"\"\r\n      [markerDraggable]=\"m.draggable\"\r\n      (dragEnd)=\"markerDragEnd(m, $event)\"\r\n      [iconUrl]=\"'http://maps.google.com/mapfiles/ms/icons/green-dot.png'\"\r\n      (mouseOver)=\"mouseOver($event)\">\r\n  \r\n  >\r\n   \r\n    \r\n  </agm-marker>\r\n  \r\n  \r\n  \r\n\r\n\r\n  \r\n <agm-polygon     *ngFor=\"let m of mapdata; let i = index\"  [paths]=\"m.polygon\"  (polyClick)=\"onPolyclick(m);mapsidenav.toggle()\"  [visible]=\"showpoly\" [fillColor]=\"'#98FB98'\">\r\n       \r\n   \r\n</agm-polygon>\r\n\r\n</agm-map>\r\n\r\n\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n\r\n"
+module.exports = "<mat-sidenav-container>\r\n  <mat-sidenav id=\"mapsidenav\" #mapsidenav>\r\n    <nav class=\"menu\">\r\n      <a mat-button (click)=\"mapsidenav.toggle()\" style=\"text-align:right;\">Close &nbsp;&nbsp;</a>\r\n      <h3>{{sidenavdata.label}} </h3>\r\n      <p>{{sidenavdata.Disp}}</p>\r\n\r\n      <a mat-button routerLink=\"/markerdetail/{{sidenavdata.type}}/{{sidenavdata.id}}\">\r\n        <i class=\"fas fa-tree\"></i> &nbsp;&nbsp; Click for more Details</a>\r\n\r\n    </nav>\r\n  </mat-sidenav>\r\n\r\n  <mat-sidenav-content>\r\n\r\n    <div class=\"col-md-12\" style=\"padding-left: 2px;padding-right: 2px; \">\r\n\r\n\r\n      <agm-map id=\"AgmMap\" (idle)=\"idle()\" (centerChange)=\"centerChange($event)\" [latitude]=\"lat\" [longitude]=\"lng\"\r\n        [zoom]=\"zoom\" [disableDefaultUI]=\"false\" [zoomControl]=\"true\" (mapClick)=\"mapClicked($event)\"\r\n        (zoomChange)=\"handlezoomchange($event)\">\r\n        #AgmMap\r\n        <agm-marker [visible]=\"anusdata\" *ngFor=\"let m of mapdata; let i = index\"\r\n          (markerClick)=\"mapsidenav.toggle();clickedMarker(m,0)\" [latitude]=\"m.lat\"\r\n          [longitude]=\"m.lng\" [label]=\"\" [markerDraggable]=\"false\"\r\n          (dragEnd)=\"markerDragEnd(m, $event)\" [iconUrl]=\"'http://maps.google.com/mapfiles/ms/icons/green-dot.png'\"\r\n          (mouseOver)=\"mouseOver($event)\">\r\n\r\n          >\r\n\r\n\r\n        </agm-marker>\r\n\r\n\r\n        <agm-marker [visible]=\"anusdata\" *ngFor=\"let m of mapdata2; let i = index\"\r\n          (markerClick)=\"mapsidenav.toggle();clickedMarker(m,1)\" [latitude]=\"m.lat\" [longitude]=\"m.lng\" [label]=\"\"\r\n          [markerDraggable]=\"m.draggable\" (dragEnd)=\"markerDragEnd(m, $event)\"\r\n          [iconUrl]=\"'http://maps.google.com/mapfiles/ms/icons/red-dot.png'\" (mouseOver)=\"mouseOver($event)\">\r\n\r\n          >\r\n\r\n\r\n        </agm-marker>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n <agm-polygon *ngFor=\"let m of mapdata; let i = index\" [paths]=\"m.polygon\" strokeWeight=\".5\"\r\n          (polyClick)=\"clickedMarker(m,0);mapsidenav.toggle()\" [visible]=\"showpoly&& anusdata\" [fillColor]=\"'#70F6F1'\">\r\n\r\n\r\n        </agm-polygon>\r\n\r\n        <agm-polygon *ngFor=\"let m of mapdata2; let i = index\" [paths]=\"m.polygon\" strokeWeight=\".5\"\r\n          (polyClick)=\"clickedMarker(m,1);mapsidenav.toggle()\" [visible]=\"showpoly&& anusdata\" [fillColor]=\"'#6BECAD'\">\r\n\r\n\r\n        </agm-polygon>\r\n\r\n        <!-- <agm-marker\r\n        (markerClick)=\"mapsidenav.toggle();\" [latitude]=\"26.4490\"\r\n        [longitude]=\"67.6424\"\r\n         [iconUrl]=\"'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'\"\r\n        (mouseOver)=\"mouseOver($event)\">\r\n\r\n        >\r\n\r\n        </agm-marker> -->\r\n\r\n\r\n        <agm-data-layer [geoJson]=\"geoJsonObject\"  [style]=\"styleFunc\">\r\n        </agm-data-layer>\r\n\r\n      </agm-map>\r\n\r\n\r\n\r\n    </div>\r\n    <div class=\"col-md-2\">\r\n\r\n\r\n\r\n    </div>\r\n\r\n\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
 
 /***/ }),
 
@@ -1797,12 +1385,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+//import * as jsondata from '../../assets/lakes.json';
 var MyMapComponent = /** @class */ (function () {
+    //geoJsonObject: Object =
     function MyMapComponent(db, mainService) {
         this.db = db;
         this.mainService = mainService;
         this.zoom = 5;
         this.mapdata = [];
+        this.mapdata2 = [];
         this.showpoly = false;
         // initial center position for the map
         this.lat = 30.3753;
@@ -1810,10 +1401,19 @@ var MyMapComponent = /** @class */ (function () {
         this.sidenavdata = {
             description: "",
             label: "",
-            id: ""
+            id: "",
+            type: "",
         };
     }
+    MyMapComponent.prototype.styleFunc = function (feature) {
+        return ({
+            clickable: false,
+            fillColor: 'red',
+            strokeWeight: 1
+        });
+    };
     MyMapComponent.prototype.ngOnInit = function () {
+        //this.postpoly("Km9QzKUwUTMnypEbEemt",dat);
         var _this = this;
         this.mainService.getCollection("marker")
             .then(function (list) {
@@ -1824,25 +1424,32 @@ var MyMapComponent = /** @class */ (function () {
             .catch(function (err) {
             console.log(err);
         });
+        //getting second marker collection
+        this.mainService.getCollection("marker2")
+            .then(function (list) {
+            list.forEach(function (element) {
+                _this.mapdata2.push(element);
+            });
+        })
+            .catch(function (err) {
+            console.log(err);
+        });
     };
-    MyMapComponent.prototype.ngAfterViewInit = function () {
-        this.renderer.setElementStyle(this.wrapper.nativeElement, 'height', (window.innerHeight) + 'px');
-        console.log("ng on view");
-    };
-    MyMapComponent.prototype.onWindowResize = function () {
-        console.log("calling on resize");
-        this.onResize();
-    };
+    // @HostListener('window:resize')
+    //   onWindowResize() {
+    //     console.log("calling on resize");
+    //     this.onResize();
+    //   }
     MyMapComponent.prototype.onResize = function () {
         var _this = this;
         // resize the container for the google map
-        this.renderer.setElementStyle(this.wrapper.nativeElement, 'height', (window.innerHeight) + 'px');
+        this.renderer.setElementStyle(this.wrapper.nativeElement, "height", (window.innerHeight) + 'px');
         // recenters the map to the resized area.
         this.agmMap.triggerResize().then(function () {
             return _this.agmMap._mapsWrapper.setCenter({ lat: _this.centerLat, lng: _this.centerLng });
         });
     };
-    // idle fires after paning or zooming is done. 
+    // idle fires after paning or zooming is done.
     // This is where we want to capture the center of the map.
     // This way if the user resizes, the center is preserved.
     MyMapComponent.prototype.idle = function () {
@@ -1856,9 +1463,10 @@ var MyMapComponent = /** @class */ (function () {
             this.changeLng = event.lng;
         }
     };
-    MyMapComponent.prototype.clickedMarker = function (clickedMarker) {
+    MyMapComponent.prototype.clickedMarker = function (clickedMarker, type) {
         console.log("clicked the marker: " + clickedMarker.label);
         this.sidenavdata = clickedMarker;
+        this.sidenavdata.type = type;
     };
     MyMapComponent.prototype.handlezoomchange = function (znumber) {
         console.log("now zoom is", znumber);
@@ -1886,36 +1494,23 @@ var MyMapComponent = /** @class */ (function () {
         for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
             var coords = array_1[_i];
             result.push({
-                lat: coords[0],
-                lng: coords[1]
+                lat: coords[1],
+                lng: coords[0]
             });
         }
         console.log("conversion success");
         return result;
     };
-    MyMapComponent.prototype.changedim = function (maker) {
-        var temp = maker.polygon;
-        var tempdim;
-        temp.forEach(function (element) {
-            tempdim = element.lat;
-            element.lat = element.lng;
-            element.lng = tempdim;
+    MyMapComponent.prototype.postpoly = function (id, data) {
+        console.log("passing data to lat-lng");
+        var result = this.convertToLatLngLiteral(data);
+        this.db.collection('marker2').doc(id).update({
+            polygon: result
         });
-        maker.polygon = temp;
-        //console.log("output dimensions",temp)
-        return (maker);
     };
-    MyMapComponent.prototype.postpoly = function () {
-        var _this = this;
-        console.log(" i was called");
-        var allmarkers = this.mapdata;
-        allmarkers.forEach(function (element) {
-            console.log("sending data for :", element.label);
-            var id = element.id;
-            var poly = element.polygon;
-            _this.db.collection('marker').doc(id).update({
-                polygon: poly
-            });
+    MyMapComponent.prototype.postarray = function (id, data) {
+        this.db.collection('marker2').doc(id).update({
+            imgyear: data
         });
     };
     __decorate([
@@ -1926,12 +1521,6 @@ var MyMapComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('wrapper'),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
     ], MyMapComponent.prototype, "wrapper", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('window:resize'),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", void 0)
-    ], MyMapComponent.prototype, "onWindowResize", null);
     MyMapComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-my-map',
@@ -1942,291 +1531,6 @@ var MyMapComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"], _services_main_service__WEBPACK_IMPORTED_MODULE_1__["MainService"]])
     ], MyMapComponent);
     return MyMapComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/profile/profile.component.css":
-/*!***********************************************!*\
-  !*** ./src/app/profile/profile.component.css ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n.col-dp{\r\n    width: 100%;\r\n    float: left;\r\n    justify-content: center;\r\n  }\r\n  .dp{\r\n    width: 100px; height: 100px; border-radius: 50%; \r\n  }\r\n  .col-info{\r\n    display: block;\r\n  }\r\n  #title-options{\r\n    padding: 10px 0px;\r\n  \r\n  }\r\n  .title-option{\r\n    width: 50%;\r\n    text-align: center;\r\n    padding: 10px 24px; /* Some padding */\r\n    cursor: pointer; /* Pointer/hand icon */\r\n    float: left; /* Float the buttons side by side */\r\n  }\r\n  .profile-img{\r\n    height: 100px;\r\n    width: 100px;\r\n    border-radius:3px;\r\n  \r\n    z-index: -5;\r\n    /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.2); */\r\n  }\r\n  @media only screen and (min-width: 600px) {\r\n      /* For tablets: */\r\n  \r\n  }\r\n  @media only screen and (min-width: 1200px) {\r\n      /* For desktop: */\r\n      .col-dp{\r\n      width: 20%;\r\n    }\r\n  \r\n    .profile-img{\r\n      width:90%;\r\n        height:90%;\r\n      z-index: -5;\r\n    }\r\n  \r\n    .col-info{\r\n      width: 79%;\r\n    }\r\n  \r\n  \r\n  \r\n    .col-left{\r\n      width: 25%;\r\n      \r\n    }\r\n    .col-middle{\r\n      width: 50%;\r\n    }\r\n    .col-right{\r\n      width: 25%;\r\n    }\r\n    .content{\r\n      max-width: 1600px;\r\n      margin: auto;\r\n    }\r\n  \r\n  \r\n  \r\n  }\r\n  .dp{\r\n    position: absolute;\r\n  }\r\n  .on-dp{\r\n    position: relative;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n  }\r\n  .passthrough{\r\n    pointer-events:none;\r\n  }\r\n  agm-map {\r\n    height: 300px;\r\n  }\r\n  \r\n  "
-
-/***/ }),
-
-/***/ "./src/app/profile/profile.component.html":
-/*!************************************************!*\
-  !*** ./src/app/profile/profile.component.html ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\r\n<div class=\"content\">\r\n \r\n\r\n  <div class=\"row\">\r\n\r\n\r\n\r\n      <div class=\"col-right\">\r\n      \r\n\r\n      </div>\r\n      <div class=\"col-middle\">\r\n\r\n          <div class=\"row\">\r\n\r\n\r\n\r\n              <div class=\"col-25p padding-responsive\">\r\n                  <div class=\"centered-horizontal\">\r\n                      <div>\r\n\r\n                          <img src=\"{{user?.dpSrc ? user.dpSrc : defaultDp}}\" class=\"dp \" />\r\n\r\n                          <div class=\"on-dp \" style=\"height: 100px; width: 100%;\">\r\n                              <mat-progress-spinner [value]=\"progressValue\" *ngIf=\"dpUpload\" mode=\"indeterminate\" diameter=\"100\" strokeWidth=\"5\"></mat-progress-spinner>\r\n                          </div>\r\n\r\n\r\n                          <br>\r\n                          <div *ngIf=\"me\">\r\n                              <input id=\"file\" type=\"file\" (change)=\"fileChangeEventDp($event)\" accept=\".png,.jpg\" class=\" inputfile inputfile-3\" />\r\n                              <label for=\"file\">Change photo</label>\r\n\r\n                          </div>\r\n\r\n\r\n                      </div>\r\n\r\n                  </div>\r\n\r\n              </div>\r\n\r\n\r\n              <div class=\"col-75p padding-global\">\r\n                  <h3>{{user.displayName}}</h3>\r\n\r\n              </div>\r\n\r\n\r\n          </div>\r\n\r\n          <mat-spinner class=\"centered-horizontal\" diameter=\"30\" *ngIf=\"loading\"></mat-spinner>\r\n\r\n          <div *ngIf=\"dpChangedEvent\">\r\n\r\n\r\n              <image-cropper [imageChangedEvent]=\"dpChangedEvent\" [maintainAspectRatio]=\"true\" [aspectRatio]=\"1 / 1\" [resizeToWidth]=\"128\"\r\n                  format=\"png\" (imageCropped)=\"imageCropped($event)\" (imageLoaded)=\"imageLoaded()\" (loadImageFailed)=\"loadImageFailed()\"\r\n                  style=\"height: 300px; width: 100%; background: #ddd;\"></image-cropper>\r\n              <div class=\"centered-horizontal\">\r\n                  <button mat-raised-button color=\"accent\" (click)=\"uploadDp()\" class=\"centered-horizontal\">Upload</button>\r\n              </div>\r\n\r\n\r\n\r\n\r\n          </div>\r\n\r\n\r\n          <div *ngIf=\"!me && !loading\">\r\n              \r\n\r\n          </div>\r\n\r\n\r\n          <div *ngIf=\"me\">\r\n              <div class=\"row\">\r\n                  <mat-form-field appearance=\"outline\" class=\"col-3 padding-global\">\r\n                      <mat-label>Name</mat-label>\r\n                      <input matInput [(ngModel)]=\"user.displayName\" placeholder=\"Name\">\r\n                      <!-- <mat-hint>Search</mat-hint> -->\r\n                  </mat-form-field>\r\n\r\n\r\n\r\n                  <mat-form-field appearance=\"outline\" class=\"col-3 padding-global\">\r\n                      <mat-label>Email</mat-label>\r\n                      <input matInput [(ngModel)]=\"user.email\" placeholder=\"Email\" disabled>\r\n                      <!-- <mat-hint>Search</mat-hint> -->\r\n                  </mat-form-field>\r\n\r\n\r\n              </div>\r\n\r\n              <!-- <mat-card style=\"margin:10px 0px; padding: 10px;\"> -->\r\n        \r\n              <div class=\"button-row\">\r\n                <button mat-raised-button (click)=\"saveProfileData()\" color=\"accent\" *ngIf=\"!loading && !error\">Save</button>\r\n                <mat-spinner class=\"centered-horizontal\" diameter=\"30\" *ngIf=\"loading\"></mat-spinner>\r\n            </div>\r\n          </div>\r\n          <!-- </mat-card> -->\r\n      </div>\r\n      <div class=\"col-left\">\r\n\r\n\r\n\r\n      </div>\r\n\r\n\r\n\r\n\r\n\r\n  </div>\r\n\r\n\r\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/profile/profile.component.ts":
-/*!**********************************************!*\
-  !*** ./src/app/profile/profile.component.ts ***!
-  \**********************************************/
-/*! exports provided: ProfileComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileComponent", function() { return ProfileComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../_services/auth.service */ "./src/app/_services/auth.service.ts");
-/* harmony import */ var _services_upload__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_services/upload */ "./src/app/_services/upload.ts");
-/* harmony import */ var _services_notify_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../_services/notify.service */ "./src/app/_services/notify.service.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/keycodes */ "./node_modules/@angular/cdk/esm5/keycodes.es5.js");
-/* harmony import */ var _services_profile_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../_services/profile.service */ "./src/app/_services/profile.service.ts");
-/* harmony import */ var _schema_user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../schema/user */ "./src/app/schema/user.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-
-var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent(authService, route, profileService, notify, location) {
-        var _this = this;
-        this.authService = authService;
-        this.route = route;
-        this.profileService = profileService;
-        this.notify = notify;
-        this.location = location;
-        this.user = new _schema_user__WEBPACK_IMPORTED_MODULE_10__["default"];
-        this.dpChangedEvent = '';
-        this.logoChangedEvent = '';
-        this.croppedImage = '';
-        this.defaultDp = '/assets/dp-placeholder.png';
-        this.separatorKeysCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_8__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_8__["COMMA"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_8__["SPACE"]];
-        this.loading = false;
-        this.eduTags = [];
-        this.allEduTags = [
-            'computers',
-            'writing',
-            'accounting',
-            'angular',
-            'android-developement',
-            'ios-developement0',
-            'maths',
-            'physics',
-            'digital-logic-design',
-            'health',
-            'medical-sciences'
-        ];
-        this.eduTagCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"]();
-        this.lat = 51.673858;
-        this.lng = 7.815982;
-        this.doctorLocation = {
-            lat: 0,
-            lng: 0,
-            draggable: true
-        };
-        this.filteredEduTags = this.eduTagCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (tag) { return tag ? _this._filter(tag) : _this.allEduTags.slice(); }));
-    }
-    ProfileComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.userId = this.route.snapshot.paramMap.get('id');
-        this.authService.getCurrentUserUpdates().subscribe(function (user) {
-            if (!user) {
-                return;
-            }
-            if (user.id === _this.userId || !_this.userId) {
-                _this.me = true;
-            }
-            else {
-                _this.getUser();
-                _this.me = false;
-            }
-            _this.user = user;
-        });
-    };
-    ProfileComponent.prototype.getUser = function () {
-        var _this = this;
-        this.loading = true;
-        this.profileService.getById(this.userId)
-            .then(function (user) {
-            _this.user = user;
-            //  console.log(user);
-            _this.loading = false;
-        })
-            .catch(function (err) {
-            _this.loading = false;
-        });
-    };
-    // changeIsDoctor(event): void {
-    //   console.log(this.user.isDoctor);
-    //   this.authService.updateIsDoctor(this.user.isDoctor);
-    // }
-    // updateRxTemplate() {
-    //   this.authService.updateRxTemplate(this.user.doctor.rxTemplate, true)
-    //     .then(() => {
-    //       this.notify.update('template data updated succefully', 'success');
-    //       this.loading = false;
-    //     })
-    //     .catch(err => {
-    //       this.notify.update('Template to update', 'error');
-    //       this.loading = false;
-    //     });
-    // }
-    ProfileComponent.prototype.uploadDp = function () {
-        var _this = this;
-        this.dpChangedEvent = false;
-        console.log(this.croppedImage);
-        this.dpUpload = new _services_upload__WEBPACK_IMPORTED_MODULE_5__["Upload"](this.dataURItoBlob(this.croppedImage));
-        var id = this.user.id;
-        this.authService.uploadDp(this.dpUpload)
-            .then(function (downloadUrl) {
-            _this.user.dpSrc = downloadUrl;
-            _this.dpUpload = null;
-        })
-            .catch(function (err) {
-            console.log(err);
-            _this.dpUpload = null;
-        });
-    };
-    /** For Dp  */
-    ProfileComponent.prototype.fileChangeEventDp = function (event) {
-        if (event.target.files !== undefined && event.target.files.length > 0) {
-            this.dpChangedEvent = event;
-        }
-        else {
-            this.dpChangedEvent = false;
-        }
-    };
-    /** For logo */
-    ProfileComponent.prototype.fileChangeEventLogo = function (event) {
-        if (event.target.files !== undefined && event.target.files.length > 0) {
-            this.logoChangedEvent = event;
-        }
-        else {
-            this.logoChangedEvent = false;
-        }
-    };
-    ProfileComponent.prototype.imageCropped = function (image) {
-        this.croppedImage = image;
-    };
-    ProfileComponent.prototype.imageLoaded = function () {
-        // show cropper
-    };
-    ProfileComponent.prototype.loadImageFailed = function () {
-        // show message
-    };
-    ProfileComponent.prototype.addEdu = function (event) {
-        var input = event.input;
-        var value = event.value;
-        // Add our tag
-        if ((value || '').trim()) {
-            this.eduTags.push(value.trim());
-        }
-        // Reset the input value
-        if (input) {
-            input.value = '';
-        }
-        this.eduTagCtrl.setValue(null);
-    };
-    ProfileComponent.prototype.removeEdu = function (tag) {
-        var index = this.eduTags.indexOf(tag);
-        if (index >= 0) {
-            this.eduTags.splice(index, 1);
-        }
-    };
-    ProfileComponent.prototype._filter = function (name) {
-        return this.allEduTags.filter(function (tag) {
-            return tag.toLowerCase().indexOf(name.toLowerCase()) === 0;
-        });
-    };
-    ProfileComponent.prototype.eduSelected = function (event) {
-        this.eduTags.push(event.option.viewValue);
-        this.tagInput.nativeElement.value = '';
-        this.eduTagCtrl.setValue(null);
-    };
-    ProfileComponent.prototype.clickedMarker = function (label, index) {
-        console.log("clicked the marker: " + (label || index));
-    };
-    ProfileComponent.prototype.markerDragEnd = function (m, event) {
-        console.log('dragEnd', m, event);
-        this.doctorLocation.lat = event.coords.lat;
-        this.doctorLocation.lng = event.coords.lng;
-    };
-    ProfileComponent.prototype.mapClicked = function (event) {
-        this.doctorLocation.lat = event.coords.lat;
-        this.doctorLocation.lng = event.coords.lng;
-    };
-    ProfileComponent.prototype.saveProfileData = function () {
-        var _this = this;
-        this.loading = true;
-        this.authService.updateProfile(this.user)
-            .then(function (result) {
-            _this.loading = false;
-            console.log(" updating data");
-        })
-            .catch(function (err) {
-            console.log("error updating data");
-            _this.loading = false;
-        });
-    };
-    ProfileComponent.prototype.dataURItoBlob = function (dataURI) {
-        // convert base64 to raw binary data held in a string
-        // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
-        var byteString = atob(dataURI.split(',')[1]);
-        // separate out the mime component
-        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-        // write the bytes of the string to an ArrayBuffer
-        var ab = new ArrayBuffer(byteString.length);
-        // create a view into the buffer
-        var ia = new Uint8Array(ab);
-        // set the bytes of the buffer to the correct values
-        for (var i = 0; i < byteString.length; i++) {
-            ia[i] = byteString.charCodeAt(i);
-        }
-        // write the ArrayBuffer to a blob, and you're done
-        var blob = new Blob([ab], { type: mimeString });
-        return blob;
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('tagInput'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
-    ], ProfileComponent.prototype, "tagInput", void 0);
-    ProfileComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-profile',
-            template: __webpack_require__(/*! ./profile.component.html */ "./src/app/profile/profile.component.html"),
-            styles: [__webpack_require__(/*! ./profile.component.css */ "./src/app/profile/profile.component.css")]
-        }),
-        __metadata("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            _services_profile_service__WEBPACK_IMPORTED_MODULE_9__["ProfileService"],
-            _services_notify_service__WEBPACK_IMPORTED_MODULE_6__["NotifyService"],
-            _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"]])
-    ], ProfileComponent);
-    return ProfileComponent;
 }());
 
 
@@ -2256,89 +1560,6 @@ var PlantifyUser = /** @class */ (function () {
     return PlantifyUser;
 }());
 /* harmony default export */ __webpack_exports__["default"] = (PlantifyUser);
-
-
-/***/ }),
-
-/***/ "./src/app/side-bar/side-bar.component.css":
-/*!*************************************************!*\
-  !*** ./src/app/side-bar/side-bar.component.css ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".menu{\r\n    max-width: 250px;\r\n    margin-top: 20px;\r\n    text-align: center;\r\n    overflow: hidden;\r\n  }\r\n  \r\n  \r\n  nav a,p{\r\n    width: 100%;\r\n    text-decoration: none;\r\n    background-color: #eee;\r\n  }\r\n  \r\n  \r\n  nav a{\r\n    text-align: left;\r\n    font-size: 120%;\r\n    padding: 5px 10px;\r\n  }\r\n  \r\n  \r\n  /* nav *:visited, a:link {\r\n  } */\r\n  \r\n  \r\n  nav a.active {\r\n    color: #039be5;\r\n  }\r\n  \r\n  \r\n  .section-heading{\r\n    text-align: center;\r\n    padding: 0px 10px;\r\n    font-weight: bold;\r\n    \r\n  }\r\n  \r\n  \r\n  .pwa{\r\n    padding: 5px;\r\n    font-size: 80%;\r\n    text-align: center;\r\n    position: relative;\r\n    bottom: 0;\r\n  }\r\n  \r\n  \r\n  @media only screen and (min-width: 600px) {\r\n      /* For tablets: */\r\n  \r\n      nav a:hover {\r\n      color: #314947;\r\n      background-color: #CFD8DC;\r\n    }\r\n      \r\n  }"
-
-/***/ }),
-
-/***/ "./src/app/side-bar/side-bar.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/side-bar/side-bar.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\r\n<div style=\"height: 100%;\">\r\n\r\n\r\n  \r\n\r\n  <nav class=\"menu\" #mainsnav id=\"mainsnav\">\r\n          <a mat-button routerLink=\"/mymap\" (click)=\"mainsnav.toggle()\"> <i class=\"fas fa-map-marker-alt\"></i>&nbsp;&nbsp;Our Map</a>\r\n          <a mat-button routerLink=\"/\" (click)=\"mainsnav.toggle()\"> <i class=\"fas fa-edit\"></i>&nbsp;&nbsp;Publications</a>\r\n          <p class=\"section-heading\" >Personal</p>\r\n           <a mat-button  routerLink=\"/about\"  (click)=\"snav.toggle()\"><i class=\"fas fa-user \"></i>&nbsp;&nbsp; About Us</a>\r\n           <a mat-button    (click)=\"mainsnav.toggle()\"><i class=\"far fa-comment-dots\"></i>&nbsp;&nbsp; Feedback</a>\r\n          \r\n  </nav>\r\n\r\n\r\n\r\n <!--<p class=\"pwa\">This app is Progressive Web App which means it can run offline and you can add it to homescreen.</p> {% endcomment %}\r\n--> \r\n\r\n\r\n\r\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/side-bar/side-bar.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/side-bar/side-bar.component.ts ***!
-  \************************************************/
-/*! exports provided: SideBarComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SideBarComponent", function() { return SideBarComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_main_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_services/main.service */ "./src/app/_services/main.service.ts");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_services/auth.service */ "./src/app/_services/auth.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var SideBarComponent = /** @class */ (function () {
-    function SideBarComponent(mainService, authService) {
-        this.mainService = mainService;
-        this.authService = authService;
-        this.isLoggedIn = false;
-    }
-    SideBarComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.authService.getLoggedInUpdates().subscribe(function (user) {
-            if (user == null || user == undefined) {
-                _this.isLoggedIn = false;
-            }
-            else {
-                _this.isLoggedIn = true;
-            }
-        });
-    };
-    SideBarComponent.prototype.logout = function () {
-        localStorage.clear();
-        this.authService.logOut();
-    };
-    SideBarComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-side-bar',
-            template: __webpack_require__(/*! ./side-bar.component.html */ "./src/app/side-bar/side-bar.component.html"),
-            styles: [__webpack_require__(/*! ./side-bar.component.css */ "./src/app/side-bar/side-bar.component.css")]
-        }),
-        __metadata("design:paramtypes", [_services_main_service__WEBPACK_IMPORTED_MODULE_1__["MainService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
-    ], SideBarComponent);
-    return SideBarComponent;
-}());
-
 
 
 /***/ }),

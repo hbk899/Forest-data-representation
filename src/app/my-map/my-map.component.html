@@ -4,7 +4,7 @@
       <a mat-button (click)="mapsidenav.toggle()" style="text-align:right;">Close &nbsp;&nbsp;</a>
       <h3>{{sidenavdata.label}} </h3>
       <p>{{sidenavdata.Disp}}</p>
-      <p>this is id{{sidenavdata.id}}
+
       <a mat-button routerLink="/markerdetail/{{sidenavdata.type}}/{{sidenavdata.id}}">
         <i class="fas fa-tree"></i> &nbsp;&nbsp; Click for more Details</a>
 
@@ -13,7 +13,7 @@
 
   <mat-sidenav-content>
 
-    <div class="col-md-10" style="padding-left: 2px;padding-right: 0px; ">
+    <div class="col-md-12" style="padding-left: 2px;padding-right: 2px; ">
 
 
       <agm-map id="AgmMap" (idle)="idle()" (centerChange)="centerChange($event)" [latitude]="lat" [longitude]="lng"
@@ -21,8 +21,8 @@
         (zoomChange)="handlezoomchange($event)">
         #AgmMap
         <agm-marker [visible]="anusdata" *ngFor="let m of mapdata; let i = index"
-          (markerClick)="mapsidenav.toggle();clickedMarker(m,0)" [latitude]="m.polygon[0].lat -0.001"
-          [longitude]="m.polygon[0].lng -0.001" [label]="" [markerDraggable]="m.draggable"
+          (markerClick)="mapsidenav.toggle();clickedMarker(m,0)" [latitude]="m.lat"
+          [longitude]="m.lng" [label]="" [markerDraggable]="false"
           (dragEnd)="markerDragEnd(m, $event)" [iconUrl]="'http://maps.google.com/mapfiles/ms/icons/green-dot.png'"
           (mouseOver)="mouseOver($event)">
 
@@ -48,15 +48,19 @@
 
 
 
-
-
-        <agm-polygon *ngFor="let m of mapdata; let i = index" [paths]="m.polygon"
-          (polyClick)="onPolyclick(m);mapsidenav.toggle()" [visible]="showpoly&& anusdata" [fillColor]="'#98FB98'">
+ <agm-polygon *ngFor="let m of mapdata; let i = index" [paths]="m.polygon" strokeWeight=".5"
+          (polyClick)="clickedMarker(m,0);mapsidenav.toggle()" [visible]="showpoly&& anusdata" [fillColor]="'#70F6F1'">
 
 
         </agm-polygon>
 
-        <agm-marker
+        <agm-polygon *ngFor="let m of mapdata2; let i = index" [paths]="m.polygon" strokeWeight=".5"
+          (polyClick)="clickedMarker(m,1);mapsidenav.toggle()" [visible]="showpoly&& anusdata" [fillColor]="'#6BECAD'">
+
+
+        </agm-polygon>
+
+        <!-- <agm-marker
         (markerClick)="mapsidenav.toggle();" [latitude]="26.4490"
         [longitude]="67.6424"
          [iconUrl]="'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'"
@@ -64,7 +68,7 @@
 
         >
 
-        </agm-marker>
+        </agm-marker> -->
 
 
         <agm-data-layer [geoJson]="geoJsonObject"  [style]="styleFunc">

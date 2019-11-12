@@ -53,14 +53,14 @@ export class AMainComponent implements OnInit {
     .then(list => {
       //this.articlesList = list;
       console.log(this.articlesList);
-      
+
       return "got documents from database";
     })
     .then(temp => {
         console.log("this is temp"+ temp);
-        
+
     })
-  
+
     .catch(err => {
         console.log(err);
     });
@@ -76,17 +76,17 @@ export class AMainComponent implements OnInit {
     });
 
 
-  
+
   }
   // liking(articleid){
   //  let admin = this.require('firebase-admin');
-  //   var addDoc =this.db.collection('articles').doc(articleid).update({      
-    
+  //   var addDoc =this.db.collection('articles').doc(articleid).update({
+
   //     likedUserIds:admin.firestore.FieldValue.arrayUnion(this.user.id)
   //   }).then(ref => {
   //     console.log('Added like with ID: ', this.user.id);
-      
-  //     this.router.navigateByUrl('/');    
+
+  //     this.router.navigateByUrl('/');
   // });
   // }
 

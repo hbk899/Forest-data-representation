@@ -31,7 +31,8 @@ export class MarkerdetailComponent implements OnInit {
   loading = false;
   anusdata: boolean;
   startyear = 2013;
-  showyear: number = 2013;
+years:any
+  showyear:any
   imagesrc: string;
   animateclicked = false;
   markerid: any;
@@ -65,6 +66,8 @@ export class MarkerdetailComponent implements OnInit {
           this.markerdetail = list;
           this.imagearray = list.picurl;
           this.imagesrc = list.picurl[0];
+          this.years=list.imgyear
+          this.showyear=list.imgyear[0];
           console.log(this.markerdetail.lat);
           this.loading = false;
         })
@@ -86,6 +89,8 @@ export class MarkerdetailComponent implements OnInit {
           this.markerdetail = list;
           this.imagearray = list.picurl;
           this.imagesrc = list.picurl[0];
+          this.years=list.imgyear
+          this.showyear=list.imgyear[0];
           console.log(this.markerdetail.lat);
           this.loading = false;
         })
@@ -101,7 +106,7 @@ export class MarkerdetailComponent implements OnInit {
     this.loading = true;
     var temp = this.selected.value;
     temp++;
-    this.showyear = this.startyear + temp;
+    this.showyear =  this.years[temp];
     temp = temp % this.imagearray.length;
     this.selected.setValue(temp);
     console.log("current index", temp);
@@ -112,7 +117,7 @@ export class MarkerdetailComponent implements OnInit {
     this.loading = true;
     var temp = this.selected.value;
     temp--;
-    this.showyear = this.startyear + temp;
+    this.showyear =  this.years[temp];
     temp = temp % this.imagearray.length;
     this.selected.setValue(temp);
     console.log("current index", temp);

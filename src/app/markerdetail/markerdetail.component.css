@@ -53,9 +53,10 @@
 }
 
 .card{
-
+ border: 0px;
   background-image:"https://gph.is/2gESFHh"
 }
 .m-3{
 margin :5px;
 }
+
