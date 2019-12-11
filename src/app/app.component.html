@@ -14,7 +14,8 @@
       <mat-icon>menu</mat-icon>
     </a>
     <!--<a  routerLink="/signin" *ngIf="!loggedIn">Sign In</a>-->
-    <a *ngIf="!isMobile" routerLink="/">Our Map</a>
+    <a *ngIf="!isMobile" routerLink="/">Home</a>
+    <a *ngIf="!isMobile" routerLink="/map">Our Map</a>
     <a *ngIf="!isMobile" routerLink="/publications">Our Publications </a>
     <a *ngIf="!isMobile" routerLink="/about">About</a>
     <span style="flex: 1 0 auto;"></span>
@@ -24,7 +25,7 @@
   <mat-sidenav-container class="nav-container" autosize>
     <mat-sidenav #snav [(mode)]="sideNavMode" [(opened)]="sideNavOpened" fullscreen>
       <nav class="menu">
-        <a mat-button routerLink="/" (click)="snav.toggle()"> <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Our
+        <a mat-button routerLink="/map" (click)="snav.toggle()"> <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Our
           Map</a>
         <a mat-button routerLink="/publications" (click)="snav.toggle()"> <i
             class="fas fa-edit"></i>&nbsp;&nbsp;Publications</a>

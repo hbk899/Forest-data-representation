@@ -733,6 +733,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _signin_signin_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./signin/signin.component */ "./src/app/signin/signin.component.ts");
 /* harmony import */ var _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./my-map/my-map.component */ "./src/app/my-map/my-map.component.ts");
 /* harmony import */ var _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./markerdetail/markerdetail.component */ "./src/app/markerdetail/markerdetail.component.ts");
+/* harmony import */ var _title_title_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./title/title.component */ "./src/app/title/title.component.ts");
 /*
 * This file decides the navigation of the app.
 */
@@ -750,12 +751,14 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     // { path: '', component: ArifMainComponent },
     { path: 'publications', component: _a_main_a_main_component__WEBPACK_IMPORTED_MODULE_2__["AMainComponent"] },
     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_3__["AboutComponent"] },
     { path: 'signin', component: _signin_signin_component__WEBPACK_IMPORTED_MODULE_4__["SigninComponent"] },
-    { path: '', component: _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_5__["MyMapComponent"] },
+    { path: '', component: _title_title_component__WEBPACK_IMPORTED_MODULE_7__["TitleComponent"] },
+    { path: 'map', component: _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_5__["MyMapComponent"] },
     { path: 'markerdetail', component: _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_6__["MarkerdetailComponent"] },
     { path: 'markerdetail/:type/:id', component: _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_6__["MarkerdetailComponent"] },
 ];
@@ -798,7 +801,7 @@ module.exports = "example-container {\r\n  display: flex;\r\n  flex-direction: c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<html>\r\n\r\n<head>\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0 ,height=device-height\">\r\n</head>\r\n\r\n<body *ngIf=\"!loading\">\r\n\r\n\r\n  <!--this is toolbar-->\r\n  <mat-toolbar class=\"toolbar app-toolbar\" color=\"primary\" (window:resize)=\"refresh()\">\r\n    <span class=\"header-padding\"></span>\r\n    <a *ngIf=\"isMobile\" (click)=\"snav.toggle()\">\r\n      <mat-icon>menu</mat-icon>\r\n    </a>\r\n    <!--<a  routerLink=\"/signin\" *ngIf=\"!loggedIn\">Sign In</a>-->\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/\">Our Map</a>\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/publications\">Our Publications </a>\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/about\">About</a>\r\n    <span style=\"flex: 1 0 auto;\"></span>\r\n    <a routerLink=\"/profile\" *ngIf=\"loggedIn\"><i class=\"fas fa-user \"></i>{{ \" \"+username}} </a>\r\n    <span class=\"header-padding\"></span>\r\n  </mat-toolbar>\r\n  <mat-sidenav-container class=\"nav-container\" autosize>\r\n    <mat-sidenav #snav [(mode)]=\"sideNavMode\" [(opened)]=\"sideNavOpened\" fullscreen>\r\n      <nav class=\"menu\">\r\n        <a mat-button routerLink=\"/\" (click)=\"snav.toggle()\"> <i class=\"fas fa-map-marker-alt\"></i>&nbsp;&nbsp;Our\r\n          Map</a>\r\n        <a mat-button routerLink=\"/publications\" (click)=\"snav.toggle()\"> <i\r\n            class=\"fas fa-edit\"></i>&nbsp;&nbsp;Publications</a>\r\n        <p class=\"section-heading\">Personal</p>\r\n        <a mat-button routerLink=\"/about\" (click)=\"snav.toggle()\"><i class=\"fas fa-user \"></i>&nbsp;&nbsp; About Us</a>\r\n        <a mat-button (click)=\"snav.toggle()\"><i class=\"far fa-comment-dots\"></i>&nbsp;&nbsp; Feedback</a>\r\n      </nav>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <router-outlet></router-outlet>\r\n\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>\r\n<footer>\r\n  <mat-toolbar class=\"toolbar footer\" color=\"primary\" (window:resize)=\"refresh()\" *ngIf=\"!loading\">\r\n\r\n    <!-- <span class=\"header-padding\"></span>\r\n\r\n    <a>Footer 1</a>\r\n    <a>Footer 2</a>\r\n    <a>Footer 3</a>\r\n    <span style=\"flex: 1 0 auto;\"></span> -->\r\n\r\n\r\n    <!-- Footer -->\r\n\r\n\r\n\r\n\r\n  <!-- Footer Links -->\r\n\r\n  <!-- Copyright -->\r\n  <div   class=\"mx-auto\" style=\"text-align: center ;\">© 2018 Copyright:\r\n    <a href=\"https://tukl.seecs.nust.edu.pk/\"> TUKL SEECS</a>\r\n  </div>\r\n  <!-- Copyright -->\r\n\r\n\r\n<!-- Footer -->\r\n  </mat-toolbar>\r\n</footer>\r\n</body>\r\n\r\n</html>\r\n\r\n\r\n<!--\r\nCopyright 2017-2018 Google Inc. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at http://angular.io/license\r\n-->\r\n"
+module.exports = "<html>\r\n\r\n<head>\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0 ,height=device-height\">\r\n</head>\r\n\r\n<body *ngIf=\"!loading\">\r\n\r\n\r\n  <!--this is toolbar-->\r\n  <mat-toolbar class=\"toolbar app-toolbar\" color=\"primary\" (window:resize)=\"refresh()\">\r\n    <span class=\"header-padding\"></span>\r\n    <a *ngIf=\"isMobile\" (click)=\"snav.toggle()\">\r\n      <mat-icon>menu</mat-icon>\r\n    </a>\r\n    <!--<a  routerLink=\"/signin\" *ngIf=\"!loggedIn\">Sign In</a>-->\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/\">Home</a>\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/map\">Our Map</a>\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/publications\">Our Publications </a>\r\n    <a *ngIf=\"!isMobile\" routerLink=\"/about\">About</a>\r\n    <span style=\"flex: 1 0 auto;\"></span>\r\n    <a routerLink=\"/profile\" *ngIf=\"loggedIn\"><i class=\"fas fa-user \"></i>{{ \" \"+username}} </a>\r\n    <span class=\"header-padding\"></span>\r\n  </mat-toolbar>\r\n  <mat-sidenav-container class=\"nav-container\" autosize>\r\n    <mat-sidenav #snav [(mode)]=\"sideNavMode\" [(opened)]=\"sideNavOpened\" fullscreen>\r\n      <nav class=\"menu\">\r\n        <a mat-button routerLink=\"/map\" (click)=\"snav.toggle()\"> <i class=\"fas fa-map-marker-alt\"></i>&nbsp;&nbsp;Our\r\n          Map</a>\r\n        <a mat-button routerLink=\"/publications\" (click)=\"snav.toggle()\"> <i\r\n            class=\"fas fa-edit\"></i>&nbsp;&nbsp;Publications</a>\r\n        <p class=\"section-heading\">Personal</p>\r\n        <a mat-button routerLink=\"/about\" (click)=\"snav.toggle()\"><i class=\"fas fa-user \"></i>&nbsp;&nbsp; About Us</a>\r\n        <a mat-button (click)=\"snav.toggle()\"><i class=\"far fa-comment-dots\"></i>&nbsp;&nbsp; Feedback</a>\r\n      </nav>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <router-outlet></router-outlet>\r\n\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>\r\n<footer>\r\n  <mat-toolbar class=\"toolbar footer\" color=\"primary\" (window:resize)=\"refresh()\" *ngIf=\"!loading\">\r\n\r\n    <!-- <span class=\"header-padding\"></span>\r\n\r\n    <a>Footer 1</a>\r\n    <a>Footer 2</a>\r\n    <a>Footer 3</a>\r\n    <span style=\"flex: 1 0 auto;\"></span> -->\r\n\r\n\r\n    <!-- Footer -->\r\n\r\n\r\n\r\n\r\n  <!-- Footer Links -->\r\n\r\n  <!-- Copyright -->\r\n  <div   class=\"mx-auto\" style=\"text-align: center ;\">© 2018 Copyright:\r\n    <a href=\"https://tukl.seecs.nust.edu.pk/\"> TUKL SEECS</a>\r\n  </div>\r\n  <!-- Copyright -->\r\n\r\n\r\n<!-- Footer -->\r\n  </mat-toolbar>\r\n</footer>\r\n</body>\r\n\r\n</html>\r\n\r\n\r\n<!--\r\nCopyright 2017-2018 Google Inc. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at http://angular.io/license\r\n-->\r\n"
 
 /***/ }),
 
@@ -968,6 +971,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
 /* harmony import */ var _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./my-map/my-map.component */ "./src/app/my-map/my-map.component.ts");
 /* harmony import */ var _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./markerdetail/markerdetail.component */ "./src/app/markerdetail/markerdetail.component.ts");
+/* harmony import */ var _title_title_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./title/title.component */ "./src/app/title/title.component.ts");
+/* harmony import */ var _ngmodule_material_carousel__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @ngmodule/material-carousel */ "./node_modules/@ngmodule/material-carousel/fesm5/ngmodule-material-carousel.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1007,6 +1012,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1019,6 +1026,7 @@ var AppModule = /** @class */ (function () {
                 _signin_signin_component__WEBPACK_IMPORTED_MODULE_15__["SigninComponent"],
                 _my_map_my_map_component__WEBPACK_IMPORTED_MODULE_27__["MyMapComponent"],
                 _markerdetail_markerdetail_component__WEBPACK_IMPORTED_MODULE_28__["MarkerdetailComponent"],
+                _title_title_component__WEBPACK_IMPORTED_MODULE_29__["TitleComponent"],
             ],
             imports: [
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
@@ -1029,6 +1037,7 @@ var AppModule = /** @class */ (function () {
                 _material_module__WEBPACK_IMPORTED_MODULE_5__["DemoMaterialModule"],
                 ngx_image_cropper__WEBPACK_IMPORTED_MODULE_25__["ImageCropperModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouterModule"].forRoot([]),
+                _ngmodule_material_carousel__WEBPACK_IMPORTED_MODULE_30__["MatCarouselModule"].forRoot(),
                 angularfire2_auth__WEBPACK_IMPORTED_MODULE_22__["AngularFireAuthModule"],
                 _node_modules_angularfire2_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"].enablePersistence(),
                 ngx_markdown__WEBPACK_IMPORTED_MODULE_8__["MarkdownModule"].forRoot(),
@@ -1697,6 +1706,69 @@ var SigninComponent = /** @class */ (function () {
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"]])
     ], SigninComponent);
     return SigninComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/title/title.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/title/title.component.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "h2{\r\n\r\n    text-align: center; color:#ffffff; margin-top:8%;\r\n    text-transform: uppercase;\r\n}\r\nh3{\r\n    text-align: center; color:#ffffff; margin:10px auto;\r\n    text-transform: uppercase;\r\n}\r\nh5{\r\n  text-align: center; color:#ffffff;\r\n\r\n}\r\n.slogan{\r\n\r\n  background-color:#333300;\r\n  padding-top: 4%;\r\n  padding-bottom: 4%;\r\n  margin-bottom: 4%;\r\n}\r\np{\r\n\r\n    font: 15px/24px ,Verdana, Geneva, sans-serif;\r\n    color: black;\r\n    font-size: 20px;\r\n}\r\n.stat{\r\n\r\n\r\n    background-color:#66663e;\r\n    padding:2%;\r\n    margin-bottom: 4%;\r\n    box-sizing: border-box;\r\n    align-content: center;\r\n    overflow:hidden;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/title/title.component.html":
+/*!********************************************!*\
+  !*** ./src/app/title/title.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n\n\n<mat-carousel slides=3\n[loop]='true'\n[hideArrows]='false'>\n  <mat-carousel-slide image='https://lh6.googleusercontent.com/proxy/LPVa1enyku2f8DwStNJGCrLXelyxqO260DBvRod9l1kuzIdKilC6UeZy2AQ7zipRszDobf3ENOF8zfTmUg66Mj_ns_LmCK7-Wf01tTzdvVJNiwEdIpjdSTP3aj5kN4o=s0-d'\n\n\n  >\n  <h2  >Let’s save the greenery for sustainable climate and humanity</h2>\n    <a routerLink=\"/map\"><h3 >Explore our project</h3></a>\n\n\n  </mat-carousel-slide>\n\n  <mat-carousel-slide image='https://images3.alphacoders.com/112/thumb-1920-112487.jpg'>\n<h2 >Making KPK greener and Pakistan brighter</h2>\n  </mat-carousel-slide>\n  <mat-carousel-slide image='https://www.bestfunforall.com/better/imgs/Forest%20nice%20HD%20wallpaper%20%207.jpg'>\n\n  <h2 > Advanced solutions to monitor and overcome deforestation</h2>\n\n\n  </mat-carousel-slide>\n</mat-carousel>\n\n\n <div class=\"slogan\"><h3 style=\"margin: 0 auto;\"> Save trees. Save Planet. Save Humanity</h3></div>\n\n<div class=\"container\" >\n\n\n<p>Forests are like green gold of our country. Pakistan has lost a quarter of its natural\n forest cover over the past two decades and is currently experiencing a deforestation rate\n  of 2 percent a year — one of the highest in the world. This in turn has, intensified the\n  temperature, polluted the atmosphere, and worsened the lives of living beings. Pakistan is\n  in a state of ‘Green Emergency’. The declining forestation calls\n for some immediate measures to monitor and take steps to preserve greenery in our homeland.</p>\n\n\n\n</div>\n<div class=\"stat\">\n<div class=\"col-4\"><h5 style=\" text-transform: none; margin-top:0%;\">\n\n  Deforested Land <br> </h5><h2  style=\" text-transform: none; \"> 150 million Hectares</h2>\n\n</div>\n\n\n<div class=\"col-4\" ><h5  style=\" text-transform: none; margin-top:0%\">\n  Restored Land <br></h5><h2  style=\" text-transform: none;\">384,000 Hectares</h2>\n\n</div>\n<div class=\"col-4\"><h5 style=\" text-transform: none; margin-top:0%\">\n\n  Trees Being Monitored <br> </h5><h2  style=\" text-transform: none;\"> 150 million Hectares</h2>\n\n</div>\n\n\n\n\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/title/title.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/title/title.component.ts ***!
+  \******************************************/
+/*! exports provided: TitleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitleComponent", function() { return TitleComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var TitleComponent = /** @class */ (function () {
+    function TitleComponent() {
+    }
+    TitleComponent.prototype.ngOnInit = function () {
+    };
+    TitleComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-title',
+            template: __webpack_require__(/*! ./title.component.html */ "./src/app/title/title.component.html"),
+            styles: [__webpack_require__(/*! ./title.component.css */ "./src/app/title/title.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], TitleComponent);
+    return TitleComponent;
 }());
 
 

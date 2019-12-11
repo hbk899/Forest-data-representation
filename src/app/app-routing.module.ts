@@ -18,16 +18,15 @@ import {SigninComponent} from './signin/signin.component';
 import {MyMapComponent} from './my-map/my-map.component';
 import{MarkerdetailComponent} from './markerdetail/markerdetail.component';
 import { from } from 'rxjs';
+import { TitleComponent } from './title/title.component';
  export const routes: Routes = [
 
   // { path: '', component: ArifMainComponent },
   { path :'publications' , component:AMainComponent   },
   { path: 'about', component: AboutComponent  },
-
   {path:'signin',component:SigninComponent },
-
-
-  {path:'' , component:MyMapComponent},
+  { path:'', component:TitleComponent},
+  {path:'map',component: MyMapComponent},
   {path:'markerdetail' , component:MarkerdetailComponent},
   {path:'markerdetail/:type/:id' , component:MarkerdetailComponent},
 

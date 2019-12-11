@@ -28,7 +28,7 @@ import { SigninComponent } from './signin/signin.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AuthService } from './_services/auth.service';
 import { NotifyService } from './_services/notify.service';
@@ -41,23 +41,25 @@ import { AgmCoreModule } from '@agm/core';
 
 import { MyMapComponent } from './my-map/my-map.component';
 import { MarkerdetailComponent } from './markerdetail/markerdetail.component';
+import { TitleComponent } from './title/title.component';
 
-
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   declarations: [
     AppComponent,
     AMainComponent,
     AboutComponent,
-  
-   
+
+
     SigninComponent,
-   
-    
+
+
     MyMapComponent,
     MarkerdetailComponent,
-    
-  
+    TitleComponent,
+
+
   ],
   imports: [
     AppRoutingModule,
@@ -78,13 +80,13 @@ import { MarkerdetailComponent } from './markerdetail/markerdetail.component';
     //     path:'articleNew',
     //     component:ArticleNewComponent
     //   }
- 
+
 
 
 ]),
 
+MatCarouselModule.forRoot(),
 
-    
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
     MarkdownModule.forRoot(),
@@ -92,8 +94,8 @@ import { MarkerdetailComponent } from './markerdetail/markerdetail.component';
     HttpModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-   
-    
+
+
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'), // imports firebase/app needed for everything
     AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
@@ -105,8 +107,8 @@ import { MarkerdetailComponent } from './markerdetail/markerdetail.component';
 
   ],
   providers: [MainService,AuthService,NotifyService,AngularFireAuthModule,AngularFirestore],
-  
-  
+
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
